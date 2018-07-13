@@ -143,7 +143,7 @@ a {
 }
 
 .sidebar-menu {
-    position: absolute;
+    position: fixed;
     float: left;
     width: 220px;
     top: 0px;
