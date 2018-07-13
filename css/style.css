@@ -734,7 +734,8 @@ a.sign {
 }
 
 .callbacks_container {
-	position: relative;
+	/*position: relative;*/
+        position: fixed;
 	float: left;
 	width: 100%;
 }
