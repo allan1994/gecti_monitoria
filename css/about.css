@@ -28,7 +28,8 @@ h5,
 h6 {
 	margin: 0;
 	font-weight: 400;
-	font-family: 'Mallanna', sans-serif;
+        font-family: 'Roboto', sans-serif;
+	/*font-family: 'Mallanna', sans-serif;*/
 }
 
 p {

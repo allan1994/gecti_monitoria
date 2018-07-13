@@ -9,7 +9,8 @@ html,
 body {
 	margin: 0;
 	font-size: 100%;
-	font-family: 'Merriweather Sans', sans-serif;
+        font-family: 'Roboto', sans-serif;
+	/*font-family: 'Merriweather Sans', sans-serif;*/
 	background: #fff;
 }
 
@@ -43,7 +44,8 @@ h5,
 h6 {
 	margin: 0;
 	font-weight: 400;
-	font-family: 'Mallanna', sans-serif;
+        font-family: 'Roboto', sans-serif;
+	/*font-family: 'Mallanna', sans-serif;*/
 }
 
 p {
@@ -250,6 +252,7 @@ a.navbar-brand span {
 	font-size: 0.35em;
 	letter-spacing: 1px;
 	text-align: center;
+        margin-top: 2%;
 }
 
 .navbar {
@@ -1182,7 +1185,7 @@ h3.headerw3.two {
 .about-gd h4 {
 	color: #252001;
 	font-size: 1.8em;
-	text-transform: capitalize;
+	/*text-transform: capitalize;*/
 	padding-bottom: 30px;
 	border-bottom: 1px solid rgb(241, 176, 23);
 	margin-bottom: 1em;
