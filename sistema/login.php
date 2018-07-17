@@ -30,12 +30,12 @@
 <body>
     <div class="main-content-agile">
         <div class="sub-main-w3">
-            <div class="header-w3l">
+            <!--div class="header-w3l">
                 <h1>
                     <span>G</span><span>E</span>CTI
                 </h1>
                 <br />
-            </div>
+            </div!-->
             <form action="#" method="post">
                 <div class="pom-agile">
                     <span class="fa fa-user-o" aria-hidden="true"></span>
