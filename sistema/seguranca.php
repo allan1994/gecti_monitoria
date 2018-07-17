@@ -58,10 +58,11 @@ function validaUsuario($usuario, $senha) {
     // Nenhum registro foi encontrado => o usuário é inválido
     return false;
   } else {
-      // AQUI PARA DEFINIR MAIS COISAS
     // Definimos dois valores na sessão com os dados do usuário
     $_SESSION['usuarioID'] = $resultado['id']; // Pega o valor da coluna 'id do registro encontrado no MySQL
     $_SESSION['usuarioNome'] = $resultado['nome']; // Pega o valor da coluna 'nome' do registro encontrado no MySQL
+    $_SESSION['usuarioTipo'] = $resultado['tipo']; // ALLAN
+    $_SESSION['usuarioEmail'] = $resultado['usuario']; //ALLAN
     // Verifica a opção se sempre validar o login
     if ($_SG['validaSempre'] == true) {
       // Definimos dois valores na sessão com os dados do login
