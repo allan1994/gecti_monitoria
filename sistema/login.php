@@ -30,23 +30,23 @@
 <body>
     <div class="main-content-agile">
         <div class="sub-main-w3">
-            <!--div class="header-w3l">
+            <div class="header-w3l">
                 <h1>
-                    <span>G</span><span>E</span>CTI
+                    <span>L</span>OGIN
                 </h1>
                 <br />
-            </div!-->
-            <form action="#" method="post">
+            </div>
+            <form action="valida.php" method="post">
                 <div class="pom-agile">
                     <span class="fa fa-user-o" aria-hidden="true"></span>
-                    <input placeholder="Email" name="Name" class="user" type="text" required="">
+                    <input placeholder="Email" name="usuario" class="user" type="text" required="">
                 </div>
                 <div class="pom-agile">
                     <span class="fa fa-key" aria-hidden="true"></span>
-                    <input placeholder="Senha" name="Password" class="pass" type="password" required="">
+                    <input placeholder="Senha" name="senha" class="pass" type="password" required="">
                 </div>
                 <div class="right-w3l">
-                    <input type="submit" value="Login">
+                    <input type="submit" value="Entrar">
                 </div>
             </form>
         </div>
