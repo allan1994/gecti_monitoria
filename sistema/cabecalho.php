@@ -55,8 +55,16 @@
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                         <div class="profile_img">
                                             <div class="user-name">
-                                                <p>PrimeiroNome</p>
-                                                <span>Tipo de Conta</span>
+                                                <p>
+                                                <?php
+                                                echo $_SESSION['usuarioNome'];
+                                                ?>
+                                                </p>
+                                                <span>
+                                                <?php
+                                                    echo $_SESSION['usuarioTipo'];
+                                                ?>
+                                                </span>
                                             </div>
                                             <i class="fa fa-angle-down lnr"></i>
                                             <i class="fa fa-angle-up lnr"></i>
