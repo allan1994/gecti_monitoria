@@ -97,7 +97,7 @@ function protegePagina() {
 function expulsaVisitante() {
   global $_SG;
   // Remove as variáveis da sessão (caso elas existam)
-  unset($_SESSION['usuarioID'], $_SESSION['usuarioNome'], $_SESSION['usuarioLogin'], $_SESSION['usuarioSenha']);
+  unset($_SESSION['usuarioID'], $_SESSION['usuarioNome'], $_SESSION['usuarioLogin'], $_SESSION['usuarioSenha'], $_SESSION['usuarioTipo'], $_SESSION['usuarioEmail']);
   // Manda pra tela de login
   header("Location: ".$_SG['paginaLogin']);
 }
