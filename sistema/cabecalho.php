@@ -73,7 +73,7 @@
                                     </a>
                                     <ul class="dropdown-menu drp-mnu">                                        
                                         <li> <a href="editar-usuario.php"><i class="fa fa-user"></i> Perfil</a> </li>
-                                        <li> <a href="#"><i class="fa fa-sign-out"></i> Logout</a> </li>
+                                        <li> <a href="logout.php"><i class="fa fa-sign-out"></i> Logout</a> </li>
                                     </ul>
                                 </li>
                             </ul>
