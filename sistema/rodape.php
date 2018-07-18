@@ -17,25 +17,39 @@
                         </a>
                         <ul>
                             <li><a href="#">Abertos</a></li>
-                            <li><a href="#">Fechados</a></li>
+                            <?php
+                                if($_SESSION['usuarioTipo']=="aluno"){
+                                    echo '<li><a href="fechados.php">Fechados</a></li>';
+                                }
+                            ?>
                         </ul>
                     </li>
-                    <li>
-                        <a>
-                            <i class="fa fa-trello"></i>
-                            <span>Novo Grupo</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a>
-                            <i class="fa fa-user"></i>
-                            <span>Usuários</span>
-                        </a>
-                        <ul>
-                            <li><a href="#">Adicionar</a></li>
-                            <li><a href="#">Deletar</a></li>
-                        </ul>
-                    </li>
+                    <?php
+                        if($_SESSION['usuarioTipo']=="aluno"){
+                            echo 
+                            '<li>
+                                <a>
+                                    <i class="fa fa-trello"></i>
+                                    <a href="novo-grupo.php"><span>Novo Grupo</span></a>
+                                </a>
+                            </li>';
+                        }
+                    ?>
+                    <?php  
+                        if($_SESSION['usuarioTipo']=="professor"){
+                            echo 
+                            '<li>
+                                <a>
+                                    <i class="fa fa-user"></i>
+                                    <span>Usuários</span>
+                                </a>
+                                <ul>
+                                    <li><a href="#">Adicionar</a></li>
+                                    <li><a href="#">Deletar</a></li>
+                                </ul>
+                            </li>';
+                        }
+                    ?>                    
                 </ul>
             </div>
         </div>
