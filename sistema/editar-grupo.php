@@ -2,6 +2,9 @@
 include 'cabecalho.php';
 ?>
 <?php
+
+?>
+<?php
 $servername = "localhost";
 $username = "gecti";
 $password = "g3cT1@(20)18";
@@ -12,7 +15,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql = "SELECT * FROM grupos WHERE id=" . $_POST['idGrupo'];
+$sql = "SELECT * FROM grupos WHERE id=" . $_REQUEST['idGrupo'];
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 ?>
@@ -31,8 +34,8 @@ $row = mysqli_fetch_assoc($result);
                 <li class=""><a href="#OP5" data-toggle="tab" aria-expanded="false">OP5</a></li>
                 <li class=""><a href="#OP6" data-toggle="tab" aria-expanded="false">OP6</a></li>
             </ul>
-            <form method="get" action="salvar-grupo.php">
-                <input name="idGrupo" value="<?php echo $_POST['idGrupo']; ?>" hidden="">
+            <form method="post" action="editar-grupo.php">
+                <input name="idGrupo" value="<?php echo $row['id']; ?>" hidden="">
                 <div class="tab-content">
                     <div class="tab-pane active" id="OP1">
                         <div class="row">
@@ -129,10 +132,11 @@ $row = mysqli_fetch_assoc($result);
                                 <div class="hvr-fade">
                                     <?php
                                     if ($row['status'] == 'aberto') {
-                                        echo '<input type="submit" value="Salvar" style="margin-top: 3%;" />';
+                                        echo '<input type="submit" name="acao" value="Salvar" style="margin-top: 3%;" />';
+                                        echo '<input type="submit" name="acao" value="Fechar" style="margin-top: 3%;" />';
                                     } else {
-                                        echo '<input type="submit" value="Salvar" style="margin-top: 3%;" />';
-                                        echo '<input type="submit" value="ReAbrir" style="margin-top: 3%;" />';
+                                        echo '<input type="submit" name="acao" value="Salvar" style="margin-top: 3%;" />';
+                                        echo '<input type="submit" name="acao" value="ReAbrir" style="margin-top: 3%;" />';
                                     }
                                     ?>
                                 </div>
@@ -227,10 +231,11 @@ $row = mysqli_fetch_assoc($result);
                                 <div class="hvr-fade">
                                     <?php
                                     if ($row['status'] == 'aberto') {
-                                        echo '<input type="submit" value="Salvar" style="margin-top: 3%;" />';
+                                        echo '<input type="submit" name="acao" value="Salvar" style="margin-top: 3%;" />';
+                                        echo '<input type="submit" name="acao" value="Fechar" style="margin-top: 3%;" />';
                                     } else {
-                                        echo '<input type="submit" value="Salvar" style="margin-top: 3%;" />';
-                                        echo '<input type="submit" value="ReAbrir" style="margin-top: 3%;" />';
+                                        echo '<input type="submit" name="acao" value="Salvar" style="margin-top: 3%;" />';
+                                        echo '<input type="submit" name="acao" value="ReAbrir" style="margin-top: 3%;" />';
                                     }
                                     ?>
                                 </div>
@@ -329,10 +334,11 @@ $row = mysqli_fetch_assoc($result);
                                 <div class="hvr-fade">
                                     <?php
                                     if ($row['status'] == 'aberto') {
-                                        echo '<input type="submit" value="Salvar" style="margin-top: 3%;" />';
+                                        echo '<input type="submit" name="acao" value="Salvar" style="margin-top: 3%;" />';
+                                        echo '<input type="submit" name="acao" value="Fechar" style="margin-top: 3%;" />';
                                     } else {
-                                        echo '<input type="submit" value="Salvar" style="margin-top: 3%;" />';
-                                        echo '<input type="submit" value="ReAbrir" style="margin-top: 3%;" />';
+                                        echo '<input type="submit" name="acao" value="Salvar" style="margin-top: 3%;" />';
+                                        echo '<input type="submit" name="acao" value="ReAbrir" style="margin-top: 3%;" />';
                                     }
                                     ?>
                                 </div>
@@ -415,10 +421,11 @@ $row = mysqli_fetch_assoc($result);
                                 <div class="hvr-fade">
                                     <?php
                                     if ($row['status'] == 'aberto') {
-                                        echo '<input type="submit" value="Salvar" style="margin-top: 3%;" />';
+                                        echo '<input type="submit" name="acao" value="Salvar" style="margin-top: 3%;" />';
+                                        echo '<input type="submit" name="acao" value="Fechar" style="margin-top: 3%;" />';
                                     } else {
-                                        echo '<input type="submit" value="Salvar" style="margin-top: 3%;" />';
-                                        echo '<input type="submit" value="ReAbrir" style="margin-top: 3%;" />';
+                                        echo '<input type="submit" name="acao" value="Salvar" style="margin-top: 3%;" />';
+                                        echo '<input type="submit" name="acao" value="ReAbrir" style="margin-top: 3%;" />';
                                     }
                                     ?>
                                 </div>
@@ -548,10 +555,11 @@ $row = mysqli_fetch_assoc($result);
                                 <div class="hvr-fade">
                                     <?php
                                     if ($row['status'] == 'aberto') {
-                                        echo '<input type="submit" value="Salvar" style="margin-top: 3%;" />';
+                                        echo '<input type="submit" name="acao" value="Salvar" style="margin-top: 3%;" />';
+                                        echo '<input type="submit" name="acao" value="Fechar" style="margin-top: 3%;" />';
                                     } else {
-                                        echo '<input type="submit" value="Salvar" style="margin-top: 3%;" />';
-                                        echo '<input type="submit" value="ReAbrir" style="margin-top: 3%;" />';
+                                        echo '<input type="submit" name="acao" value="Salvar" style="margin-top: 3%;" />';
+                                        echo '<input type="submit" name="acao" value="ReAbrir" style="margin-top: 3%;" />';
                                     }
                                     ?>
                                 </div>
@@ -611,11 +619,11 @@ $row = mysqli_fetch_assoc($result);
                                 <div class="hvr-fade">
                                     <?php
                                     if ($row['status'] == 'aberto') {
-                                        echo '<input type="submit" value="Salvar" style="margin-top: 3%;" />';
-                                        echo '<input type="submit" value="Fechar" style="margin-top: 3%;" />';
+                                        echo '<input type="submit" name="acao" value="Salvar" style="margin-top: 3%;" />';
+                                        echo '<input type="submit" name="acao" value="Fechar" style="margin-top: 3%;" />';
                                     } else {
-                                        echo '<input type="submit" value="Salvar" style="margin-top: 3%;" />';
-                                        echo '<input type="submit" value="ReAbrir" style="margin-top: 3%;" />';
+                                        echo '<input type="submit" name="acao" value="Salvar" style="margin-top: 3%;" />';
+                                        echo '<input type="submit" name="acao" value="ReAbrir" style="margin-top: 3%;" />';
                                     }
                                     ?>
                                 </div>
