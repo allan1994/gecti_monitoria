@@ -2,7 +2,126 @@
 include 'cabecalho.php';
 ?>
 <?php
-
+if ($_POST['acao'] == 'Salvar') {
+    $servername = "localhost";
+    $username = "gecti";
+    $password = "g3cT1@(20)18";
+    $dbname = "gecti";
+    // Create connection
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    // Check connection
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+    for ($OPs_numero = 1; $OPs_numero <= 6; $OPs_numero++) {
+        for ($aluno_numero = 1; $aluno_numero <= 9; $aluno_numero++) {
+            if ($_POST['aluno' . $aluno_numero . 'OP1status']) {
+                $sql = "UPDATE grupos SET "
+                        . "aluno" . $aluno_numero . "OP" . $OPs_numero . "status="
+                        . $_POST['aluno' . $aluno_numero . 'OP' . $OPs_numero . 'status']
+                        . " WHERE id="
+                        . $_REQUEST['idGrupo']
+                        . "";
+                if (mysqli_query($conn, $sql)) {
+                    //echo "Record updated successfully";
+                } else {
+                    echo "Error updating record: " . mysqli_error($conn);
+                }
+            }
+        }
+    }
+    for ($avaliacao_numero = 1; $avaliacao_numero <= 3; $avaliacao_numero++) {
+        if ($_POST['avaliacaoOP1atendimento'.$avaliacao_numero]) {
+            $sql = "UPDATE grupos SET "
+                    . "avaliacaoOP1atendimento".$avaliacao_numero."="
+                    . $_POST['avaliacaoOP1atendimento'.$avaliacao_numero]
+                    . " WHERE id="
+                    . $_REQUEST['idGrupo']
+                    . "";
+            if (mysqli_query($conn, $sql)) {
+                //echo "Record updated successfully";
+            } else {
+                echo "Error updating record: " . mysqli_error($conn);
+            }
+        }
+    }
+    for ($avaliacao_numero = 1; $avaliacao_numero <= 2; $avaliacao_numero++) {
+        if ($_POST['avaliacaoOP2atendimento'.$avaliacao_numero]) {
+            $sql = "UPDATE grupos SET "
+                    . "avaliacaoOP2atendimento".$avaliacao_numero."="
+                    . $_POST['avaliacaoOP2atendimento'.$avaliacao_numero]
+                    . " WHERE id="
+                    . $_REQUEST['idGrupo']
+                    . "";
+            if (mysqli_query($conn, $sql)) {
+                //echo "Record updated successfully";
+            } else {
+                echo "Error updating record: " . mysqli_error($conn);
+            }
+        }
+    }
+    for ($avaliacao_numero = 1; $avaliacao_numero <= 20; $avaliacao_numero++) {
+        if ($_POST['avaliacaoOP3atendimento'.$avaliacao_numero]) {
+            $sql = "UPDATE grupos SET "
+                    . "avaliacaoOP3atendimento".$avaliacao_numero."="
+                    . $_POST['avaliacaoOP3atendimento'.$avaliacao_numero]
+                    . " WHERE id="
+                    . $_REQUEST['idGrupo']
+                    . "";
+            if (mysqli_query($conn, $sql)) {
+                //echo "Record updated successfully";
+            } else {
+                echo "Error updating record: " . mysqli_error($conn);
+            }
+        }
+    }
+    for ($avaliacao_numero = 1; $avaliacao_numero <= 1; $avaliacao_numero++) {
+        if ($_POST['avaliacaoOP4atendimento'.$avaliacao_numero]) {
+            $sql = "UPDATE grupos SET "
+                    . "avaliacaoOP4atendimento".$avaliacao_numero."="
+                    . $_POST['avaliacaoOP4atendimento'.$avaliacao_numero]
+                    . " WHERE id="
+                    . $_REQUEST['idGrupo']
+                    . "";
+            if (mysqli_query($conn, $sql)) {
+                //echo "Record updated successfully";
+            } else {
+                echo "Error updating record: " . mysqli_error($conn);
+            }
+        }
+    }
+    for ($avaliacao_numero = 1; $avaliacao_numero <= 8; $avaliacao_numero++) {
+        if ($_POST['avaliacaoOP5atendimento'.$avaliacao_numero]) {
+            $sql = "UPDATE grupos SET "
+                    . "avaliacaoOP5atendimento".$avaliacao_numero."="
+                    . $_POST['avaliacaoOP5atendimento'.$avaliacao_numero]
+                    . " WHERE id="
+                    . $_REQUEST['idGrupo']
+                    . "";
+            if (mysqli_query($conn, $sql)) {
+                //echo "Record updated successfully";
+            } else {
+                echo "Error updating record: " . mysqli_error($conn);
+            }
+        }
+    }
+    for($OBS_numero=1; $OBS_numero<=6; $OBS_numero++){
+        if ($_POST['avaliacaoOP'.$OBS_numero.'atendimentoOBS']) {
+            $sql = "UPDATE grupos SET "
+                    . "avaliacaoOP".$OBS_numero."atendimentoOBS="
+                    . $_POST['avaliacaoOP'.$OBS_numero.'atendimentoOBS']
+                    . " WHERE id="
+                    . $_REQUEST['idGrupo']
+                    . "";
+            if (mysqli_query($conn, $sql)) {
+                //echo "Record updated successfully";
+            } else {
+                echo "Error updating record: " . mysqli_error($conn);
+            }
+        }
+    }
+    mysqli_close($conn);
+}
 ?>
 <?php
 $servername = "localhost";
@@ -62,12 +181,12 @@ $row = mysqli_fetch_assoc($result);
                                                     echo '<td>1</td>';
                                                     echo '<td>' . $row['nome' . $aluno_numero] . '</td>';
                                                     echo '<td>' . $row['email' . $aluno_numero] . '</td>';
-                                                    echo '<td><input type="radio" name="OP1p' . $aluno_numero . '" value="presente" ';
+                                                    echo '<td><input type="radio" name="aluno' . $aluno_numero . 'OP1status" value="true" ';
                                                     if ($row['aluno' . $aluno_numero . 'OP1status']) {
                                                         echo 'checked';
                                                     }
                                                     echo ' /></td>';
-                                                    echo '<td><input type="radio" name="OP1p' . $aluno_numero . '" value="ausente" ';
+                                                    echo '<td><input type="radio" name="aluno' . $aluno_numero . 'OP1status" value="false" ';
                                                     if ($row['aluno' . $aluno_numero . 'OP1status'] == false) {
                                                         echo 'checked';
                                                     }
@@ -106,17 +225,17 @@ $row = mysqli_fetch_assoc($result);
                                             <tr>
                                                 <td>1</td>
                                                 <td>Trajetória de C&T</td>
-                                                <td><input type="number" value="<?php echo $row['avaliacaoOP1atendimento1']; ?>" /> %</td>
+                                                <td><input type="number" value="<?php echo $row['avaliacaoOP1atendimento1']; ?>" name="avaliacaoOP1atendimento1"/> %</td>
                                             </tr>
                                             <tr>
                                                 <td>2</td>
                                                 <td>Aplicações das possíveis tecnologias</td>
-                                                <td><input type="number" value="<?php echo $row['avaliacaoOP1atendimento2']; ?>" /> %</td>
+                                                <td><input type="number" value="<?php echo $row['avaliacaoOP1atendimento2']; ?>" name="avaliacaoOP1atendimento2"/> %</td>
                                             </tr>
                                             <tr>
                                                 <td>3</td>
                                                 <td>Mercados impactados</td>
-                                                <td><input type="number" value="<?php echo $row['avaliacaoOP1atendimento3']; ?>" /> %</td>
+                                                <td><input type="number" value="<?php echo $row['avaliacaoOP1atendimento3']; ?>" name="avaliacaoOP1atendimento3"/> %</td>
                                             </tr>
                                         </tbody>
                                     </table>
