@@ -85,9 +85,12 @@ $result = mysqli_query($conn, $sql);
                     </thead>
                     <tbody>
                         <?php
+                        $number_x=1;
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
                                 echo '<tr>';
+                                echo '<td>' . $number_x . '</td>';
+                                $number_x++;
                                 echo '<td>' . $row['nome'] . '</td>';
                                 echo '<td>' . $row['usuario'] . '</td>';
                                 echo '<td>' . $row['tipo'] . '</td>';
