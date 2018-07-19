@@ -75,15 +75,15 @@ if ($_POST['acao']) {
         <input type="text" name="responsavel" value="<?php echo $_SESSION['usuarioID']; ?>" hidden=""/>
         <div class="formulario_cadastro_2">
             <label>Cógido do Grupo:</label>
-            <input type="text" nome="codigo"/>
+            <input type="text" nome="codigo" required=""/>
         </div>
         <div class="formulario_cadastro_2">
             <label>Tipo do Projeto:</label>
-            <input type="text" nome="tipo"/>
+            <input type="text" nome="tipo" required=""/>
         </div>
         <div class="formulario_cadastro_2">
             <label>Objeto de pesquisa:</label>
-            <input type="text" style="width: 100%;" nome="objeto"/>
+            <input type="text" style="width: 100%;" nome="objeto" required=""/>
         </div>
         <div class="formulario_cadastro_2">
             <div class="formulario_cadastro_1 col-md-4">
@@ -91,15 +91,15 @@ if ($_POST['acao']) {
                 <div>
                     <div>
                         <label>Matrícula:</label>
-                        <input type="text" style="width: 100%;" nome="matricula1"/>
+                        <input type="text" style="width: 100%;" nome="matricula1" required=""/>
                     </div>
                     <div>
                         <label>Nome:</label>
-                        <input type="text" style="width: 100%;" nome="nome1"/>
+                        <input type="text" style="width: 100%;" nome="nome1" required=""/>
                     </div>
                     <div>
                         <label>Email:</label>
-                        <input type="email" style="width: 100%;" nome="email1"/>
+                        <input type="email" style="width: 100%;" nome="email1" required=""/>
                     </div>
                 </div>
             </div>

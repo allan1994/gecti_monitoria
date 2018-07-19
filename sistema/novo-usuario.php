@@ -59,11 +59,11 @@ if ($_GET['nome'] != '') {
     <form action="novo-usuario.php" method="get">
         <div class="formulario_cadastro_2">
             <label>Primeiro Nome:</label>
-            <input type="text" name="nome"/>
+            <input type="text" name="nome" required=""/>
         </div>
         <div class="formulario_cadastro_2">
             <label>Email:</label>
-            <input type="email" name="usuario"/>
+            <input type="email" name="usuario" required=""/>
         </div>
         <div class="formulario_cadastro_2">
             <label>Tipo de Conta:</label>

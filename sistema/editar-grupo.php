@@ -2,6 +2,9 @@
 include 'cabecalho.php';
 ?>
 <?php
+if ($_POST['acao'] == 'Componentes') {
+    header("Location: editar-componentes.php");
+}
 if ($_POST['acao'] == 'Salvar') {
     $servername = "localhost";
     $username = "gecti";
@@ -291,6 +294,7 @@ $row = mysqli_fetch_assoc($result);
                                     if ($row['status'] == 'Aberto') {
                                         echo '<input type="submit" name="acao" value="Salvar" style="margin-top: 3%;" />';
                                         echo '<input type="submit" name="acao" value="Fechar" style="margin-top: 3%;" />';
+                                        echo '<input type="submit" name="acao" value="Componentes" style="margin-top: 3%;" />';
                                     } else {
                                         echo '<input type="submit" name="acao" value="Salvar" style="margin-top: 3%;" />';
                                         echo '<input type="submit" name="acao" value="ReAbrir" style="margin-top: 3%;" />';

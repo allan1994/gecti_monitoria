@@ -3,7 +3,7 @@ include 'cabecalho.php';
 ?>
 <?php
 $mensagem_da_acao = '';
-if ($_POST['deletar'] != '') {
+if ($_GET['deletar'] != '') {
     $servername = "localhost";
     $username = "gecti";
     $password = "g3cT1@(20)18";
@@ -24,7 +24,7 @@ if ($_POST['deletar'] != '') {
     }
     mysqli_close($conn);
 }
-if ($_POST['senha'] != '') {
+if ($_GET['senha'] != '') {
     $servername = "localhost";
     $username = "gecti";
     $password = "g3cT1@(20)18";
