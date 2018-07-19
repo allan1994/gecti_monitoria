@@ -1,8 +1,25 @@
 ﻿<?php
 include 'cabecalho.php';
 ?>
+<?php
+$servername = "localhost";
+$username = "gecti";
+$password = "g3cT1@(20)18";
+$dbname = "gecti";
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+$sql = "SELECT * FROM grupos WHERE id=". $_POST['idGrupo'];
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($result);
+?>
 <div class="inner-block">
-    <h3>Grupo [código] </h3>
+    <?php
+    echo '<h3> Grupo '. $row['codigo'] .' </h3>';
+    ?>
     <div style="margin-top:3%;"></div>
     <div class="col-sm-12 col-md-12 col-lg-12 mb-60">
         <div class="horizontal-tab">
