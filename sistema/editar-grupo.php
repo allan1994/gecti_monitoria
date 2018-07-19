@@ -288,7 +288,7 @@ $row = mysqli_fetch_assoc($result);
                                 </div>
                                 <div class="hvr-fade">
                                     <?php
-                                    if ($row['status'] == 'aberto') {
+                                    if ($row['status'] == 'Aberto') {
                                         echo '<input type="submit" name="acao" value="Salvar" style="margin-top: 3%;" />';
                                         echo '<input type="submit" name="acao" value="Fechar" style="margin-top: 3%;" />';
                                     } else {
@@ -387,7 +387,7 @@ $row = mysqli_fetch_assoc($result);
                                 </div>
                                 <div class="hvr-fade">
                                     <?php
-                                    if ($row['status'] == 'aberto') {
+                                    if ($row['status'] == 'Aberto') {
                                         echo '<input type="submit" name="acao" value="Salvar" style="margin-top: 3%;" />';
                                         echo '<input type="submit" name="acao" value="Fechar" style="margin-top: 3%;" />';
                                     } else {
@@ -490,7 +490,7 @@ $row = mysqli_fetch_assoc($result);
                                 </div>
                                 <div class="hvr-fade">
                                     <?php
-                                    if ($row['status'] == 'aberto') {
+                                    if ($row['status'] == 'Aberto') {
                                         echo '<input type="submit" name="acao" value="Salvar" style="margin-top: 3%;" />';
                                         echo '<input type="submit" name="acao" value="Fechar" style="margin-top: 3%;" />';
                                     } else {
@@ -577,7 +577,7 @@ $row = mysqli_fetch_assoc($result);
                                 </div>
                                 <div class="hvr-fade">
                                     <?php
-                                    if ($row['status'] == 'aberto') {
+                                    if ($row['status'] == 'Aberto') {
                                         echo '<input type="submit" name="acao" value="Salvar" style="margin-top: 3%;" />';
                                         echo '<input type="submit" name="acao" value="Fechar" style="margin-top: 3%;" />';
                                     } else {
@@ -711,7 +711,7 @@ $row = mysqli_fetch_assoc($result);
                                 </div>
                                 <div class="hvr-fade">
                                     <?php
-                                    if ($row['status'] == 'aberto') {
+                                    if ($row['status'] == 'Aberto') {
                                         echo '<input type="submit" name="acao" value="Salvar" style="margin-top: 3%;" />';
                                         echo '<input type="submit" name="acao" value="Fechar" style="margin-top: 3%;" />';
                                     } else {
@@ -775,7 +775,7 @@ $row = mysqli_fetch_assoc($result);
                                 </div>
                                 <div class="hvr-fade">
                                     <?php
-                                    if ($row['status'] == 'aberto') {
+                                    if ($row['status'] == 'Aberto') {
                                         echo '<input type="submit" name="acao" value="Salvar" style="margin-top: 3%;" />';
                                         echo '<input type="submit" name="acao" value="Fechar" style="margin-top: 3%;" />';
                                     } else {

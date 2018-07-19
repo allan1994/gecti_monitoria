@@ -1,10 +1,78 @@
 ﻿<?php
 include 'cabecalho.php';
 ?>
+<?php
+$mensagem_da_acao = '';
+if ($_POST['acao']) {
+    $servername = "localhost";
+    $username = "gecti";
+    $password = "g3cT1@(20)18";
+    $dbname = "gecti";
+    // Create connection
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    // Check connection
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+    $sql = "INSERT INTO grupos (resposavel, status, codigo, tipo, obejto) "
+            . "VALUES ('" . $_POST['responsavel'] . "', 'Aberto', '"
+            . $_POST['codigo'] . "', '" . $_POST['tipo'] . "', '" . $_POST['objeto'] . "')";
+    $last_id;
+    if (mysqli_query($conn, $sql)) {
+        //echo "New record created successfully";
+        $mensagem_da_acao = 'Novo Grupo ' . $_POST['codigo'] . ' criado com sucesso !!!';
+        $last_id = mysqli_insert_id($conn);
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
+    mysqli_close($conn);
+    $servername = "localhost";
+    $username = "gecti";
+    $password = "g3cT1@(20)18";
+    $dbname = "gecti";
+    // Create connection
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    // Check connection
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+    for ($matricula_numero = 1; $matricula_numero <= 9; $matricula_numero++) {
+        if ($_POST['matricula']) {
+            if ($_POST['nome']) {
+                $sql = "UPDATE grupos SET matricula" . $matricula_numero . "='" . $_POST['matricula' . $matricula_numero] . "' WHERE id=" . $last_id;
+                if (mysqli_query($conn, $sql)) {
+                    //echo "Record updated successfully";
+                } else {
+                    echo "Error updating record: " . mysqli_error($conn);
+                }
+                $sql = "UPDATE grupos SET nome" . $matricula_numero . "='" . $_POST['nome' . $matricula_numero] . "' WHERE id=" . $last_id;
+                if (mysqli_query($conn, $sql)) {
+                    //echo "Record updated successfully";
+                } else {
+                    echo "Error updating record: " . mysqli_error($conn);
+                }
+                $sql = "UPDATE grupos SET email" . $matricula_numero . "='" . $_POST['email' . $matricula_numero] . "' WHERE id=" . $last_id;
+                if (mysqli_query($conn, $sql)) {
+                    //echo "Record updated successfully";
+                } else {
+                    echo "Error updating record: " . mysqli_error($conn);
+                }
+            }
+        }
+    }
+    mysqli_close($conn);
+}
+?>
 <div class="inner-block">
+    <?php
+    if ($mensagem_da_acao != '') {
+        echo '<h2>' . $mensagem_da_acao . '</h2>';
+    }
+    ?>
     <h3>Cadastro Novo Grupo</h3>
     <br />
-    <form action="/" method="get">
+    <form action="novo-grupo.php" method="POST">
+        <input type="text" name="responsavel" value="<?php echo $_SESSION['usuarioID']; ?>" hidden=""/>
         <div class="formulario_cadastro_2">
             <label>Cógido do Grupo:</label>
             <input type="text" nome="codigo"/>
@@ -173,7 +241,7 @@ include 'cabecalho.php';
             </div>
         </div>
         <div class="hvr-fade">
-            <input type="submit" value="Cadastrar" />
+            <input type="submit" name="acao" value="Cadastrar" />
         </div>
     </form>
 </div>
