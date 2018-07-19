@@ -12,13 +12,13 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql = "SELECT * FROM grupos WHERE id=". $_POST['idGrupo'];
+$sql = "SELECT * FROM grupos WHERE id=" . $_POST['idGrupo'];
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 ?>
 <div class="inner-block">
     <?php
-    echo '<h3> Grupo '. $row['codigo'] .' </h3>';
+    echo '<h3> Grupo ' . $row['codigo'] . ' </h3>';
     ?>
     <div style="margin-top:3%;"></div>
     <div class="col-sm-12 col-md-12 col-lg-12 mb-60">
@@ -31,7 +31,7 @@ $row = mysqli_fetch_assoc($result);
                 <li class=""><a href="#OP5" data-toggle="tab" aria-expanded="false">OP5</a></li>
                 <li class=""><a href="#OP6" data-toggle="tab" aria-expanded="false">OP6</a></li>
             </ul>
-            <form>
+            <form method="get" action="salvar-grupo.php">
                 <div class="tab-content">
                     <div class="tab-pane active" id="OP1">
                         <div class="row">
@@ -51,27 +51,27 @@ $row = mysqli_fetch_assoc($result);
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Allan</td>
-                                                <td>teste@teste.com</td>
-                                                <td><input type="radio" name="OP1#1" value="presente" /></td>
-                                                <td><input type="radio" name="OP1#1" value="ausente" /></td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Allan</td>
-                                                <td>teste@teste.com</td>
-                                                <td><input type="radio" name="OP1#2" value="presente" /></td>
-                                                <td><input type="radio" name="OP1#2" value="ausente" /></td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Allan</td>
-                                                <td>teste@teste.com</td>
-                                                <td><input type="radio" name="OP1#3" value="presente" /></td>
-                                                <td><input type="radio" name="OP1#3" value="ausente" /></td>
-                                            </tr>
+                                            <?php
+                                            for ($aluno_numero = 1; $aluno_numero <= 9; $aluno_numero++) {
+                                                if ($row['matricula' . $aluno_numero] != '') {
+                                                    echo '<tr>';
+                                                    echo '<td>1</td>';
+                                                    echo '<td>' . $row['nome' . $aluno_numero] . '</td>';
+                                                    echo '<td>' . $row['email' . $aluno_numero] . '</td>';
+                                                    echo '<td><input type="radio" name="OP1p' . $aluno_numero . '" value="presente" ';
+                                                    if ($row['aluno' . $aluno_numero . 'OP1status']) {
+                                                        echo 'checked';
+                                                    }
+                                                    echo ' /></td>';
+                                                    echo '<td><input type="radio" name="OP1p' . $aluno_numero . '" value="ausente" ';
+                                                    if ($row['aluno' . $aluno_numero . 'OP1status'] == false) {
+                                                        echo 'checked';
+                                                    }
+                                                    echo ' /></td>';
+                                                    echo '</tr>';
+                                                }
+                                            }
+                                            ?>                                            
                                         </tbody>
                                     </table>
                                 </div>
