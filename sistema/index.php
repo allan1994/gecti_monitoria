@@ -90,6 +90,7 @@ include 'cabecalho.php';
         <div class="clearfix"> </div>
     </div>
     <br />
-    <?php
-    include 'rodape.php';
-    ?>
+</div>
+<?php
+include 'rodape.php';
+?>

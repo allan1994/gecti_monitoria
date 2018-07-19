@@ -28,26 +28,26 @@
             if ($_SESSION['usuarioTipo'] == "Aluno") {
                 echo
                 '<li>
-                                <a>
-                                    <i class="fa fa-trello"></i>
-                                    <a href="novo-grupo.php"><span>Novo Grupo</span></a>
-                                </a>
-                            </li>';
+                    <a>
+                        <i class="fa fa-trello"></i>
+                        <a href="novo-grupo.php"><span>Novo Grupo</span></a>
+                    </a>
+                </li>';
             }
             ?>
             <?php
             if ($_SESSION['usuarioTipo'] == "Professor") {
                 echo
                 '<li>
-                                <a>
-                                    <i class="fa fa-user"></i>
-                                    <span>Usuários</span>
-                                </a>
-                                <ul>
-                                    <li><a href="#">Adicionar</a></li>
-                                    <li><a href="#">Deletar</a></li>
-                                </ul>
-                            </li>';
+                    <a>
+                        <i class="fa fa-user"></i>
+                        <span>Usuários</span>
+                    </a>
+                    <ul>
+                        <li><a href="#">Adicionar</a></li>
+                        <li><a href="#">Deletar</a></li>
+                    </ul>
+                </li>';
             }
             ?>                    
         </ul>

@@ -2,11 +2,6 @@
 include 'cabecalho.php';
 ?>
 <div class="inner-block">
-    <?php
-    if (true == true) {
-        echo '<h2>Grupo cadastrado com sucesso !!!</h2>';
-    }
-    ?> 
     <h3>Cadastro Novo Grupo</h3>
     <br />
     <form action="/" method="get">

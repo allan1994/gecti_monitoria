@@ -17,7 +17,7 @@ if ($_POST['deletar'] != '') {
     $sql = "DELETE FROM usuarios WHERE id=" . $_POST['deletar'] . "";
     if (mysqli_query($conn, $sql)) {
         //echo "Record deleted successfully";
-        $mensagem_da_acao = 'Usuário deletado com sucesso !!!';
+        $mensagem_da_acao = 'Usuário de ID '. $_POST['deletar'] .' deletado com sucesso !!!';
     } else {
         echo "Falha ao deletar <br>";
         echo "Error deleting record: " . mysqli_error($conn);
@@ -39,7 +39,7 @@ if ($_POST['senha'] != '') {
 
     if (mysqli_query($conn, $sql)) {
         //echo "Record updated successfully";
-        $mensagem_da_acao = 'Usuário atualizado com sucesso !!! Nova Senha: gecti123';
+        $mensagem_da_acao = 'Usuário de ID '. $_POST['senha'] .' atualizado com sucesso !!! Nova Senha: gecti123';
     } else {
         echo "Error updating record: " . mysqli_error($conn);
     }
