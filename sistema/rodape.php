@@ -16,7 +16,7 @@
                     <span>Grupos</span>
                 </a>
                 <ul>
-                    <li><a href="#">Abertos</a></li>
+                    <li><a href="index.php">Abertos</a></li>
                     <?php
                     if ($_SESSION['usuarioTipo'] == "Aluno") {
                         echo '<li><a href="fechados.php">Fechados</a></li>';
@@ -44,8 +44,8 @@
                         <span>Usuários</span>
                     </a>
                     <ul>
-                        <li><a href="#">Adicionar</a></li>
-                        <li><a href="#">Deletar</a></li>
+                        <li><a href="novo-usuario.php">Adicionar</a></li>
+                        <li><a href="deletar-usuario.php">Editar</a></li>
                     </ul>
                 </li>';
             }
