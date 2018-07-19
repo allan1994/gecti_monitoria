@@ -31,10 +31,10 @@ if ($_POST['acao'] == 'Salvar') {
         }
     }
     for ($avaliacao_numero = 1; $avaliacao_numero <= 3; $avaliacao_numero++) {
-        if ($_POST['avaliacaoOP1atendimento'.$avaliacao_numero]) {
+        if ($_POST['avaliacaoOP1atendimento' . $avaliacao_numero]) {
             $sql = "UPDATE grupos SET "
-                    . "avaliacaoOP1atendimento".$avaliacao_numero."="
-                    . $_POST['avaliacaoOP1atendimento'.$avaliacao_numero]
+                    . "avaliacaoOP1atendimento" . $avaliacao_numero . "="
+                    . $_POST['avaliacaoOP1atendimento' . $avaliacao_numero]
                     . " WHERE id="
                     . $_REQUEST['idGrupo']
                     . "";
@@ -46,10 +46,10 @@ if ($_POST['acao'] == 'Salvar') {
         }
     }
     for ($avaliacao_numero = 1; $avaliacao_numero <= 2; $avaliacao_numero++) {
-        if ($_POST['avaliacaoOP2atendimento'.$avaliacao_numero]) {
+        if ($_POST['avaliacaoOP2atendimento' . $avaliacao_numero]) {
             $sql = "UPDATE grupos SET "
-                    . "avaliacaoOP2atendimento".$avaliacao_numero."="
-                    . $_POST['avaliacaoOP2atendimento'.$avaliacao_numero]
+                    . "avaliacaoOP2atendimento" . $avaliacao_numero . "="
+                    . $_POST['avaliacaoOP2atendimento' . $avaliacao_numero]
                     . " WHERE id="
                     . $_REQUEST['idGrupo']
                     . "";
@@ -61,10 +61,10 @@ if ($_POST['acao'] == 'Salvar') {
         }
     }
     for ($avaliacao_numero = 1; $avaliacao_numero <= 20; $avaliacao_numero++) {
-        if ($_POST['avaliacaoOP3atendimento'.$avaliacao_numero]) {
+        if ($_POST['avaliacaoOP3atendimento' . $avaliacao_numero]) {
             $sql = "UPDATE grupos SET "
-                    . "avaliacaoOP3atendimento".$avaliacao_numero."="
-                    . $_POST['avaliacaoOP3atendimento'.$avaliacao_numero]
+                    . "avaliacaoOP3atendimento" . $avaliacao_numero . "="
+                    . $_POST['avaliacaoOP3atendimento' . $avaliacao_numero]
                     . " WHERE id="
                     . $_REQUEST['idGrupo']
                     . "";
@@ -76,10 +76,10 @@ if ($_POST['acao'] == 'Salvar') {
         }
     }
     for ($avaliacao_numero = 1; $avaliacao_numero <= 1; $avaliacao_numero++) {
-        if ($_POST['avaliacaoOP4atendimento'.$avaliacao_numero]) {
+        if ($_POST['avaliacaoOP4atendimento' . $avaliacao_numero]) {
             $sql = "UPDATE grupos SET "
-                    . "avaliacaoOP4atendimento".$avaliacao_numero."="
-                    . $_POST['avaliacaoOP4atendimento'.$avaliacao_numero]
+                    . "avaliacaoOP4atendimento" . $avaliacao_numero . "="
+                    . $_POST['avaliacaoOP4atendimento' . $avaliacao_numero]
                     . " WHERE id="
                     . $_REQUEST['idGrupo']
                     . "";
@@ -91,10 +91,10 @@ if ($_POST['acao'] == 'Salvar') {
         }
     }
     for ($avaliacao_numero = 1; $avaliacao_numero <= 8; $avaliacao_numero++) {
-        if ($_POST['avaliacaoOP5atendimento'.$avaliacao_numero]) {
+        if ($_POST['avaliacaoOP5atendimento' . $avaliacao_numero]) {
             $sql = "UPDATE grupos SET "
-                    . "avaliacaoOP5atendimento".$avaliacao_numero."="
-                    . $_POST['avaliacaoOP5atendimento'.$avaliacao_numero]
+                    . "avaliacaoOP5atendimento" . $avaliacao_numero . "="
+                    . $_POST['avaliacaoOP5atendimento' . $avaliacao_numero]
                     . " WHERE id="
                     . $_REQUEST['idGrupo']
                     . "";
@@ -105,11 +105,11 @@ if ($_POST['acao'] == 'Salvar') {
             }
         }
     }
-    for($OBS_numero=1; $OBS_numero<=6; $OBS_numero++){
-        if ($_POST['avaliacaoOP'.$OBS_numero.'atendimentoOBS']) {
+    for ($OBS_numero = 1; $OBS_numero <= 6; $OBS_numero++) {
+        if ($_POST['avaliacaoOP' . $OBS_numero . 'atendimentoOBS']) {
             $sql = "UPDATE grupos SET "
-                    . "avaliacaoOP".$OBS_numero."atendimentoOBS="
-                    . $_POST['avaliacaoOP'.$OBS_numero.'atendimentoOBS']
+                    . "avaliacaoOP" . $OBS_numero . "atendimentoOBS="
+                    . $_POST['avaliacaoOP' . $OBS_numero . 'atendimentoOBS']
                     . " WHERE id="
                     . $_REQUEST['idGrupo']
                     . "";
@@ -119,6 +119,44 @@ if ($_POST['acao'] == 'Salvar') {
                 echo "Error updating record: " . mysqli_error($conn);
             }
         }
+    }
+    mysqli_close($conn);
+}
+if ($_POST['acao'] == 'Fechar') {
+    $servername = "localhost";
+    $username = "gecti";
+    $password = "g3cT1@(20)18";
+    $dbname = "gecti";
+    // Create connection
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    // Check connection
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+    $sql = "UPDATE grupos SET status=Fechado WHERE id=".$_REQUEST['idGrupo'];
+    if (mysqli_query($conn, $sql)) {
+        //echo "Record updated successfully";
+    } else {
+        echo "Error updating record: " . mysqli_error($conn);
+    }
+    mysqli_close($conn);
+}
+if ($_POST['acao'] == 'ReAbrir') {
+    $servername = "localhost";
+    $username = "gecti";
+    $password = "g3cT1@(20)18";
+    $dbname = "gecti";
+    // Create connection
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    // Check connection
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+    $sql = "UPDATE grupos SET status=ReAbrir WHERE id=".$_REQUEST['idGrupo'];
+    if (mysqli_query($conn, $sql)) {
+        //echo "Record updated successfully";
+    } else {
+        echo "Error updating record: " . mysqli_error($conn);
     }
     mysqli_close($conn);
 }
