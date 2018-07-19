@@ -79,8 +79,14 @@ $row = mysqli_fetch_assoc($result);
                             <div class="col-md-12">
                                 <h1>
                                     <?php
-                                    echo 'Avaliar Atendimento - ';
-                                    echo ($row['avaliacaoOP1atendimento1'] + $row['avaliacaoOP1atendimento2'] + $row['avaliacaoOP1atendimento3'])/3;
+                                    echo 'Avaliar Atendimento ';
+                                    if ($row['avaliacaoOP1atendimento1'] != '') {
+                                        if ($row['avaliacaoOP1atendimento2'] != '') {
+                                            if ($row['avaliacaoOP1atendimento3'] != '') {
+                                                echo '- ' . ($row['avaliacaoOP1atendimento1'] + $row['avaliacaoOP1atendimento2'] + $row['avaliacaoOP1atendimento3']) / 3;
+                                            }
+                                        }
+                                    }
                                     ?>
                                 </h1>
                                 <div class="table-responsive">
@@ -171,8 +177,12 @@ $row = mysqli_fetch_assoc($result);
                             <div class="col-md-12">
                                 <h1>
                                     <?php
-                                    echo 'Avaliar Atendimento - ';
-                                    echo ($row['avaliacaoOP2atendimento1'] + $row['avaliacaoOP2atendimento2'])/2;
+                                    echo 'Avaliar Atendimento ';
+                                    if ($row['avaliacaoOP2atendimento1'] != '') {
+                                        if ($row['avaliacaoOP2atendimento2'] != '') {
+                                            echo '- ' . ($row['avaliacaoOP2atendimento1'] + $row['avaliacaoOP2atendimento2']) / 2;
+                                        }
+                                    }
                                     ?>
                                 </h1>
                                 <div class="table-responsive">
@@ -192,7 +202,7 @@ $row = mysqli_fetch_assoc($result);
                                             </tr>
                                             <tr>
                                                 <td>2</td>
-                                                <td>Sobre a Trajetória da bancada ao mercado</td>
+                                                <td>Sobre a Trajetória da bancada ao mercado de uma das inovações</td>
                                                 <td><input type="number" value="<?php echo $row['avaliacaoOP2atendimento2']; ?>" /> %</td>
                                             </tr>
                                         </tbody>
@@ -257,7 +267,19 @@ $row = mysqli_fetch_assoc($result);
                             </div>
                             <div class="col-md-12">
                                 <h1>
-                                    Avaliar Atendimento
+                                    <?php
+                                    echo 'Avaliar Atendimento ';
+                                    for ($atendimentoOP3 = 1, $soma_avaliacao = 0; $atendimentoOP3 <= 20; $atendimentoOP3++) {
+                                        if ($row['avaliacaoOP3atendiemnto' . $atendimentoOP3] == '') {
+                                            break;
+                                        }
+                                        $soma_avaliacao = $row['avaliacaoOP3atendiemnto' . $atendimentoOP3] + $soma_avaliacao;
+                                        if ($atendimentoOP3 == 20) {
+                                            echo '- ';
+                                            echo $soma_avaliacao;
+                                        }
+                                    }
+                                    ?>
                                 </h1>
                                 <div class="table-responsive">
                                     <table class="table table-hover">
@@ -269,106 +291,15 @@ $row = mysqli_fetch_assoc($result);
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>nº1</td>
-                                                <td><input type="number" /> %</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>nº2</td>
-                                                <td><input type="number" /> %</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>nº3</td>
-                                                <td><input type="number" /> %</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>nº4</td>
-                                                <td><input type="number" /> %</td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>nº5</td>
-                                                <td><input type="number" /> %</td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>nº6</td>
-                                                <td><input type="number" /> %</td>
-                                            </tr>
-                                            <tr>
-                                                <td>7</td>
-                                                <td>nº7</td>
-                                                <td><input type="number" /> %</td>
-                                            </tr>
-                                            <tr>
-                                                <td>8</td>
-                                                <td>nº8</td>
-                                                <td><input type="number" /> %</td>
-                                            </tr>
-                                            <tr>
-                                                <td>9</td>
-                                                <td>nº9</td>
-                                                <td><input type="number" /> %</td>
-                                            </tr>
-                                            <tr>
-                                                <td>10</td>
-                                                <td>nº10</td>
-                                                <td><input type="number" /> %</td>
-                                            </tr>
-                                            <tr>
-                                                <td>11</td>
-                                                <td>nº11</td>
-                                                <td><input type="number" /> %</td>
-                                            </tr>
-                                            <tr>
-                                                <td>12</td>
-                                                <td>nº12</td>
-                                                <td><input type="number" /> %</td>
-                                            </tr>
-                                            <tr>
-                                                <td>13</td>
-                                                <td>nº13</td>
-                                                <td><input type="number" /> %</td>
-                                            </tr>
-                                            <tr>
-                                                <td>14</td>
-                                                <td>nº14</td>
-                                                <td><input type="number" /> %</td>
-                                            </tr>
-                                            <tr>
-                                                <td>15</td>
-                                                <td>nº15</td>
-                                                <td><input type="number" /> %</td>
-                                            </tr>
-                                            <tr>
-                                                <td>16</td>
-                                                <td>nº16</td>
-                                                <td><input type="number" /> %</td>
-                                            </tr>
-                                            <tr>
-                                                <td>17</td>
-                                                <td>nº17</td>
-                                                <td><input type="number" /> %</td>
-                                            </tr>
-                                            <tr>
-                                                <td>18</td>
-                                                <td>nº18</td>
-                                                <td><input type="number" /> %</td>
-                                            </tr>
-                                            <tr>
-                                                <td>19</td>
-                                                <td>nº19</td>
-                                                <td><input type="number" /> %</td>
-                                            </tr>
-                                            <tr>
-                                                <td>20</td>
-                                                <td>nº20</td>
-                                                <td><input type="number" /> %</td>
-                                            </tr>
+                                            <?php
+                                            for ($atendimentoOP3 = 1; $atendimentoOP3 <= 20; $atendimentoOP3++) {
+                                                echo '<tr>';
+                                                echo '<td>' . $atendimentoOP3 . '</td>';
+                                                echo '<td>nº' . $atendimentoOP3 . '</td>';
+                                                echo '<td><input type="number" value="' . $row['avaliacaoOP3atendiemnto' . $atendimentoOP3] . '" /> %</td>';
+                                                echo '</tr>';
+                                            }
+                                            ?>                                            
                                         </tbody>
                                     </table>
                                 </div>
@@ -378,7 +309,7 @@ $row = mysqli_fetch_assoc($result);
                                     Observações
                                 </h1>
                                 <div style="margin-top: 2%;">
-                                    <textarea style="width: 100%"></textarea>
+                                    <textarea style="width: 100%"><?php echo $row['avaliacaoOP3atendiemntoOBS']; ?></textarea>
                                 </div>
                                 <div class="hvr-fade">
                                     <input type="submit" value="Salvar" style="margin-top: 3%;" />
@@ -431,7 +362,7 @@ $row = mysqli_fetch_assoc($result);
                             </div>
                             <div class="col-md-12">
                                 <h1>
-                                    Avaliar Atendimento
+                                    Avaliar Atendimento <?php if ($row['avaliacaoOP4atendimento1'] != '') echo '- ' . $row['avaliacaoOP4atendimento1']; ?>
                                 </h1>
                                 <div class="table-responsive">
                                     <table class="table table-hover">
@@ -446,7 +377,7 @@ $row = mysqli_fetch_assoc($result);
                                             <tr>
                                                 <td>1</td>
                                                 <td>Discussão dos conceitos-chaves de GECTI em contraponto as informações das pesquisas</td>
-                                                <td><input type="number" /> %</td>
+                                                <td><input type="number" value="<?php echo $row['avaliacaoOP4atendimento1']; ?>" /> %</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -457,7 +388,7 @@ $row = mysqli_fetch_assoc($result);
                                     Observações
                                 </h1>
                                 <div style="margin-top: 2%;">
-                                    <textarea style="width: 100%"></textarea>
+                                    <textarea style="width: 100%"><?php echo $row['avaliacaoOP4atendiemntoOBS']; ?></textarea>
                                 </div>
                                 <div class="hvr-fade">
                                     <input type="submit" value="Salvar" style="margin-top: 3%;" />
@@ -510,7 +441,19 @@ $row = mysqli_fetch_assoc($result);
                             </div>
                             <div class="col-md-12">
                                 <h1>
-                                    Avaliar Atendimento
+                                    <?php
+                                    echo 'Avaliar Atendimento ';
+                                    for ($atendimentoOP5 = 1, $soma_avaliacao = 0; $atendimentoOP5 <= 8; $atendimentoOP5++) {
+                                        if ($row['avaliacaoOP5atendiemnto' . $atendimentoOP5] == '') {
+                                            break;
+                                        }
+                                        $soma_avaliacao = $row['avaliacaoOP5atendiemnto' . $atendimentoOP5] + $soma_avaliacao;
+                                        if ($atendimentoOP5 == 8) {
+                                            echo '- ';
+                                            echo $soma_avaliacao;
+                                        }
+                                    }
+                                    ?>
                                 </h1>
                                 <div class="table-responsive">
                                     <table class="table table-hover">
@@ -525,42 +468,42 @@ $row = mysqli_fetch_assoc($result);
                                             <tr>
                                                 <td>1</td>
                                                 <td>Título</td>
-                                                <td><input type="number" /> %</td>
+                                                <td><input type="number" value="<?php echo $row['avaliacaoOP5atendimento1']; ?>" /> %</td>
                                             </tr>
                                             <tr>
                                                 <td>2</td>
                                                 <td>Autores / CPF / Filiação</td>
-                                                <td><input type="number" /> %</td>
+                                                <td><input type="number" value="<?php echo $row['avaliacaoOP5atendimento2']; ?>" /> %</td>
                                             </tr>
                                             <tr>
                                                 <td>3</td>
                                                 <td>Resumo</td>
-                                                <td><input type="number" /> %</td>
+                                                <td><input type="number" value="<?php echo $row['avaliacaoOP5atendimento3']; ?>" /> %</td>
                                             </tr>
                                             <tr>
                                                 <td>4</td>
                                                 <td>Abstract</td>
-                                                <td><input type="number" /> %</td>
+                                                <td><input type="number" value="<?php echo $row['avaliacaoOP5atendimento4']; ?>" /> %</td>
                                             </tr>
                                             <tr>
                                                 <td>5</td>
                                                 <td>Introdução</td>
-                                                <td><input type="number" /> %</td>
+                                                <td><input type="number" value="<?php echo $row['avaliacaoOP5atendimento5']; ?>" /> %</td>
                                             </tr>
                                             <tr>
                                                 <td>6</td>
                                                 <td>Desenvolvimento (OP1, OP2 e OP3)</td>
-                                                <td><input type="number" /> %</td>
+                                                <td><input type="number" value="<?php echo $row['avaliacaoOP5atendimento6']; ?>" /> %</td>
                                             </tr>
                                             <tr>
                                                 <td>7</td>
                                                 <td>Discussão dos resultados (OP4)</td>
-                                                <td><input type="number" /> %</td>
+                                                <td><input type="number" value="<?php echo $row['avaliacaoOP5atendimento7']; ?>" /> %</td>
                                             </tr>
                                             <tr>
                                                 <td>8</td>
                                                 <td>Considerações finais</td>
-                                                <td><input type="number" /> %</td>
+                                                <td><input type="number" value="<?php echo $row['avaliacaoOP5atendimento8']; ?>" /> %</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -571,7 +514,7 @@ $row = mysqli_fetch_assoc($result);
                                     Observações
                                 </h1>
                                 <div style="margin-top: 2%;">
-                                    <textarea style="width: 100%"></textarea>
+                                    <textarea style="width: 100%"><?php echo $row['avaliacaoOP5atendiemntoOBS']; ?></textarea>
                                 </div>
                                 <div class="hvr-fade">
                                     <input type="submit" value="Salvar" style="margin-top: 3%;" />
@@ -627,7 +570,7 @@ $row = mysqli_fetch_assoc($result);
                                     Observações
                                 </h1>
                                 <div style="margin-top: 2%;">
-                                    <textarea style="width: 100%"></textarea>
+                                    <textarea style="width: 100%"><?php echo $row['avaliacaoOP6atendiemntoOBS']; ?></textarea>
                                 </div>
                                 <div class="hvr-fade">
                                     <input type="submit" value="Salvar" style="margin-top: 3%;" />
