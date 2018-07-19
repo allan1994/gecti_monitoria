@@ -78,7 +78,10 @@ $row = mysqli_fetch_assoc($result);
                             </div>
                             <div class="col-md-12">
                                 <h1>
-                                    Avaliar Atendimento
+                                    <?php
+                                    echo 'Avaliar Atendimento - ';
+                                    echo ($row['avaliacaoOP1atendimento1'] + $row['avaliacaoOP1atendimento2'] + $row['avaliacaoOP1atendimento3'])/3;
+                                    ?>
                                 </h1>
                                 <div class="table-responsive">
                                     <table class="table table-hover">
@@ -93,17 +96,17 @@ $row = mysqli_fetch_assoc($result);
                                             <tr>
                                                 <td>1</td>
                                                 <td>Trajetória de C&T</td>
-                                                <td><input type="number" /> %</td>
+                                                <td><input type="number" value="<?php echo $row['avaliacaoOP1atendimento1']; ?>"/> %</td>
                                             </tr>
                                             <tr>
                                                 <td>2</td>
                                                 <td>Aplicações das possíveis tecnologias</td>
-                                                <td><input type="number" /> %</td>
+                                                <td><input type="number" value="<?php echo $row['avaliacaoOP1atendimento2']; ?>"/> %</td>
                                             </tr>
                                             <tr>
                                                 <td>3</td>
                                                 <td>Mercados impactados</td>
-                                                <td><input type="number" /> %</td>
+                                                <td><input type="number" value="<?php echo $row['avaliacaoOP1atendimento3']; ?>"/> %</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -114,7 +117,7 @@ $row = mysqli_fetch_assoc($result);
                                     Observações
                                 </h1>
                                 <div style="margin-top: 2%;">
-                                    <textarea style="width: 100%"></textarea>
+                                    <textarea style="width: 100%"><?php echo $row['avaliacaoOP1atendiemntoOBS']; ?></textarea>
                                 </div>
                                 <div class="hvr-fade">
                                     <input type="submit" value="Salvar" style="margin-top: 3%;" />
