@@ -127,7 +127,14 @@ $row = mysqli_fetch_assoc($result);
                                     <textarea style="width: 100%"><?php echo $row['avaliacaoOP1atendiemntoOBS']; ?></textarea>
                                 </div>
                                 <div class="hvr-fade">
-                                    <input type="submit" value="Salvar" style="margin-top: 3%;" />
+                                    <?php
+                                    if ($row['status'] == 'aberto') {
+                                        echo '<input type="submit" value="Salvar" style="margin-top: 3%;" />';
+                                    } else {
+                                        echo '<input type="submit" value="Salvar" style="margin-top: 3%;" />';
+                                        echo '<input type="submit" value="ReAbrir" style="margin-top: 3%;" />';
+                                    }
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -218,7 +225,14 @@ $row = mysqli_fetch_assoc($result);
                                     <textarea style="width: 100%"><?php echo $row['avaliacaoOP2atendiemntoOBS']; ?></textarea>
                                 </div>
                                 <div class="hvr-fade">
-                                    <input type="submit" value="Salvar" style="margin-top: 3%;" />
+                                    <?php
+                                    if ($row['status'] == 'aberto') {
+                                        echo '<input type="submit" value="Salvar" style="margin-top: 3%;" />';
+                                    } else {
+                                        echo '<input type="submit" value="Salvar" style="margin-top: 3%;" />';
+                                        echo '<input type="submit" value="ReAbrir" style="margin-top: 3%;" />';
+                                    }
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -313,7 +327,14 @@ $row = mysqli_fetch_assoc($result);
                                     <textarea style="width: 100%"><?php echo $row['avaliacaoOP3atendiemntoOBS']; ?></textarea>
                                 </div>
                                 <div class="hvr-fade">
-                                    <input type="submit" value="Salvar" style="margin-top: 3%;" />
+                                    <?php
+                                    if ($row['status'] == 'aberto') {
+                                        echo '<input type="submit" value="Salvar" style="margin-top: 3%;" />';
+                                    } else {
+                                        echo '<input type="submit" value="Salvar" style="margin-top: 3%;" />';
+                                        echo '<input type="submit" value="ReAbrir" style="margin-top: 3%;" />';
+                                    }
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -392,7 +413,14 @@ $row = mysqli_fetch_assoc($result);
                                     <textarea style="width: 100%"><?php echo $row['avaliacaoOP4atendiemntoOBS']; ?></textarea>
                                 </div>
                                 <div class="hvr-fade">
-                                    <input type="submit" value="Salvar" style="margin-top: 3%;" />
+                                    <?php
+                                    if ($row['status'] == 'aberto') {
+                                        echo '<input type="submit" value="Salvar" style="margin-top: 3%;" />';
+                                    } else {
+                                        echo '<input type="submit" value="Salvar" style="margin-top: 3%;" />';
+                                        echo '<input type="submit" value="ReAbrir" style="margin-top: 3%;" />';
+                                    }
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -518,7 +546,14 @@ $row = mysqli_fetch_assoc($result);
                                     <textarea style="width: 100%"><?php echo $row['avaliacaoOP5atendiemntoOBS']; ?></textarea>
                                 </div>
                                 <div class="hvr-fade">
-                                    <input type="submit" value="Salvar" style="margin-top: 3%;" />
+                                    <?php
+                                    if ($row['status'] == 'aberto') {
+                                        echo '<input type="submit" value="Salvar" style="margin-top: 3%;" />';
+                                    } else {
+                                        echo '<input type="submit" value="Salvar" style="margin-top: 3%;" />';
+                                        echo '<input type="submit" value="ReAbrir" style="margin-top: 3%;" />';
+                                    }
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -574,7 +609,15 @@ $row = mysqli_fetch_assoc($result);
                                     <textarea style="width: 100%"><?php echo $row['avaliacaoOP6atendiemntoOBS']; ?></textarea>
                                 </div>
                                 <div class="hvr-fade">
-                                    <input type="submit" value="Salvar" style="margin-top: 3%;" />
+                                    <?php
+                                    if ($row['status'] == 'aberto') {
+                                        echo '<input type="submit" value="Salvar" style="margin-top: 3%;" />';
+                                        echo '<input type="submit" value="Fechar" style="margin-top: 3%;" />';
+                                    } else {
+                                        echo '<input type="submit" value="Salvar" style="margin-top: 3%;" />';
+                                        echo '<input type="submit" value="ReAbrir" style="margin-top: 3%;" />';
+                                    }
+                                    ?>
                                 </div>
                             </div>
                         </div>
