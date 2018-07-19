@@ -15,7 +15,7 @@ if ($_POST['acao']) {
         die("Connection failed: " . mysqli_connect_error());
     }
     $sql = "INSERT INTO grupos (resposavel, status, codigo, tipo, obejto) "
-            . "VALUES ('" . $_POST['responsavel'] . "', 'Aberto', '"
+            . "VALUES ('" . $_SESSION['usuarioID'] . "', 'Aberto', '"
             . $_POST['codigo'] . "', '" . $_POST['tipo'] . "', '" . $_POST['objeto'] . "')";
     $last_id;
     if (mysqli_query($conn, $sql)) {
@@ -72,7 +72,6 @@ if ($_POST['acao']) {
     <h3>Cadastro Novo Grupo</h3>
     <br />
     <form action="novo-grupo.php" method="POST">
-        <input type="text" name="responsavel" value="<?php echo $_SESSION['usuarioID']; ?>" hidden=""/>
         <div class="formulario_cadastro_2">
             <label>Cógido do Grupo:</label>
             <input type="text" nome="codigo" required=""/>
