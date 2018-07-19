@@ -96,17 +96,17 @@ $row = mysqli_fetch_assoc($result);
                                             <tr>
                                                 <td>1</td>
                                                 <td>Trajetória de C&T</td>
-                                                <td><input type="number" value="<?php echo $row['avaliacaoOP1atendimento1']; ?>"/> %</td>
+                                                <td><input type="number" value="<?php echo $row['avaliacaoOP1atendimento1']; ?>" /> %</td>
                                             </tr>
                                             <tr>
                                                 <td>2</td>
                                                 <td>Aplicações das possíveis tecnologias</td>
-                                                <td><input type="number" value="<?php echo $row['avaliacaoOP1atendimento2']; ?>"/> %</td>
+                                                <td><input type="number" value="<?php echo $row['avaliacaoOP1atendimento2']; ?>" /> %</td>
                                             </tr>
                                             <tr>
                                                 <td>3</td>
                                                 <td>Mercados impactados</td>
-                                                <td><input type="number" value="<?php echo $row['avaliacaoOP1atendimento3']; ?>"/> %</td>
+                                                <td><input type="number" value="<?php echo $row['avaliacaoOP1atendimento3']; ?>" /> %</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -143,34 +143,37 @@ $row = mysqli_fetch_assoc($result);
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Allan</td>
-                                                <td>teste@teste.com</td>
-                                                <td><input type="radio" name="OP2#1" value="presente" /></td>
-                                                <td><input type="radio" name="OP2#1" value="ausente" /></td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Allan</td>
-                                                <td>teste@teste.com</td>
-                                                <td><input type="radio" name="OP2#2" value="presente" /></td>
-                                                <td><input type="radio" name="OP2#2" value="ausente" /></td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Allan</td>
-                                                <td>teste@teste.com</td>
-                                                <td><input type="radio" name="OP2#3" value="presente" /></td>
-                                                <td><input type="radio" name="OP2#3" value="ausente" /></td>
-                                            </tr>
+                                            <?php
+                                            for ($aluno_numero = 1; $aluno_numero <= 9; $aluno_numero++) {
+                                                if ($row['matricula' . $aluno_numero] != '') {
+                                                    echo '<tr>';
+                                                    echo '<td>1</td>';
+                                                    echo '<td>' . $row['nome' . $aluno_numero] . '</td>';
+                                                    echo '<td>' . $row['email' . $aluno_numero] . '</td>';
+                                                    echo '<td><input type="radio" name="OP2p' . $aluno_numero . '" value="presente" ';
+                                                    if ($row['aluno' . $aluno_numero . 'OP2status']) {
+                                                        echo 'checked';
+                                                    }
+                                                    echo ' /></td>';
+                                                    echo '<td><input type="radio" name="OP2p' . $aluno_numero . '" value="ausente" ';
+                                                    if ($row['aluno' . $aluno_numero . 'OP2status'] == false) {
+                                                        echo 'checked';
+                                                    }
+                                                    echo ' /></td>';
+                                                    echo '</tr>';
+                                                }
+                                            }
+                                            ?>                                            
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <h1>
-                                    Avaliar Atendimento
+                                    <?php
+                                    echo 'Avaliar Atendimento - ';
+                                    echo ($row['avaliacaoOP2atendimento1'] + $row['avaliacaoOP2atendimento2'])/2;
+                                    ?>
                                 </h1>
                                 <div class="table-responsive">
                                     <table class="table table-hover">
@@ -185,12 +188,12 @@ $row = mysqli_fetch_assoc($result);
                                             <tr>
                                                 <td>1</td>
                                                 <td>Diagnóstico dos mercados impactados</td>
-                                                <td><input type="number" /> %</td>
+                                                <td><input type="number" value="<?php echo $row['avaliacaoOP2atendimento1']; ?>" /> %</td>
                                             </tr>
                                             <tr>
                                                 <td>2</td>
                                                 <td>Sobre a Trajetória da bancada ao mercado</td>
-                                                <td><input type="number" /> %</td>
+                                                <td><input type="number" value="<?php echo $row['avaliacaoOP2atendimento2']; ?>" /> %</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -201,7 +204,7 @@ $row = mysqli_fetch_assoc($result);
                                     Observações
                                 </h1>
                                 <div style="margin-top: 2%;">
-                                    <textarea style="width: 100%"></textarea>
+                                    <textarea style="width: 100%"><?php echo $row['avaliacaoOP2atendiemntoOBS']; ?></textarea>
                                 </div>
                                 <div class="hvr-fade">
                                     <input type="submit" value="Salvar" style="margin-top: 3%;" />
@@ -227,27 +230,27 @@ $row = mysqli_fetch_assoc($result);
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Allan</td>
-                                                <td>teste@teste.com</td>
-                                                <td><input type="radio" name="OP3#1" value="presente" /></td>
-                                                <td><input type="radio" name="OP3#1" value="ausente" /></td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Allan</td>
-                                                <td>teste@teste.com</td>
-                                                <td><input type="radio" name="OP3#2" value="presente" /></td>
-                                                <td><input type="radio" name="OP3#2" value="ausente" /></td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Allan</td>
-                                                <td>teste@teste.com</td>
-                                                <td><input type="radio" name="OP3#3" value="presente" /></td>
-                                                <td><input type="radio" name="OP3#3" value="ausente" /></td>
-                                            </tr>
+                                            <?php
+                                            for ($aluno_numero = 1; $aluno_numero <= 9; $aluno_numero++) {
+                                                if ($row['matricula' . $aluno_numero] != '') {
+                                                    echo '<tr>';
+                                                    echo '<td>1</td>';
+                                                    echo '<td>' . $row['nome' . $aluno_numero] . '</td>';
+                                                    echo '<td>' . $row['email' . $aluno_numero] . '</td>';
+                                                    echo '<td><input type="radio" name="OP3p' . $aluno_numero . '" value="presente" ';
+                                                    if ($row['aluno' . $aluno_numero . 'OP3status']) {
+                                                        echo 'checked';
+                                                    }
+                                                    echo ' /></td>';
+                                                    echo '<td><input type="radio" name="OP3p' . $aluno_numero . '" value="ausente" ';
+                                                    if ($row['aluno' . $aluno_numero . 'OP3status'] == false) {
+                                                        echo 'checked';
+                                                    }
+                                                    echo ' /></td>';
+                                                    echo '</tr>';
+                                                }
+                                            }
+                                            ?>                                            
                                         </tbody>
                                     </table>
                                 </div>
@@ -401,27 +404,27 @@ $row = mysqli_fetch_assoc($result);
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Allan</td>
-                                                <td>teste@teste.com</td>
-                                                <td><input type="radio" name="OP4#1" value="presente" /></td>
-                                                <td><input type="radio" name="OP4#1" value="ausente" /></td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Allan</td>
-                                                <td>teste@teste.com</td>
-                                                <td><input type="radio" name="OP4#2" value="presente" /></td>
-                                                <td><input type="radio" name="OP4#2" value="ausente" /></td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Allan</td>
-                                                <td>teste@teste.com</td>
-                                                <td><input type="radio" name="OP4#3" value="presente" /></td>
-                                                <td><input type="radio" name="OP4#3" value="ausente" /></td>
-                                            </tr>
+                                            <?php
+                                            for ($aluno_numero = 1; $aluno_numero <= 9; $aluno_numero++) {
+                                                if ($row['matricula' . $aluno_numero] != '') {
+                                                    echo '<tr>';
+                                                    echo '<td>1</td>';
+                                                    echo '<td>' . $row['nome' . $aluno_numero] . '</td>';
+                                                    echo '<td>' . $row['email' . $aluno_numero] . '</td>';
+                                                    echo '<td><input type="radio" name="OP4p' . $aluno_numero . '" value="presente" ';
+                                                    if ($row['aluno' . $aluno_numero . 'OP4status']) {
+                                                        echo 'checked';
+                                                    }
+                                                    echo ' /></td>';
+                                                    echo '<td><input type="radio" name="OP4p' . $aluno_numero . '" value="ausente" ';
+                                                    if ($row['aluno' . $aluno_numero . 'OP4status'] == false) {
+                                                        echo 'checked';
+                                                    }
+                                                    echo ' /></td>';
+                                                    echo '</tr>';
+                                                }
+                                            }
+                                            ?>                                            
                                         </tbody>
                                     </table>
                                 </div>
@@ -480,27 +483,27 @@ $row = mysqli_fetch_assoc($result);
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Allan</td>
-                                                <td>teste@teste.com</td>
-                                                <td><input type="radio" name="OP5#1" value="presente" /></td>
-                                                <td><input type="radio" name="OP5#1" value="ausente" /></td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Allan</td>
-                                                <td>teste@teste.com</td>
-                                                <td><input type="radio" name="OP5#2" value="presente" /></td>
-                                                <td><input type="radio" name="OP5#2" value="ausente" /></td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Allan</td>
-                                                <td>teste@teste.com</td>
-                                                <td><input type="radio" name="OP5#3" value="presente" /></td>
-                                                <td><input type="radio" name="OP5#3" value="ausente" /></td>
-                                            </tr>
+                                            <?php
+                                            for ($aluno_numero = 1; $aluno_numero <= 9; $aluno_numero++) {
+                                                if ($row['matricula' . $aluno_numero] != '') {
+                                                    echo '<tr>';
+                                                    echo '<td>1</td>';
+                                                    echo '<td>' . $row['nome' . $aluno_numero] . '</td>';
+                                                    echo '<td>' . $row['email' . $aluno_numero] . '</td>';
+                                                    echo '<td><input type="radio" name="OP5p' . $aluno_numero . '" value="presente" ';
+                                                    if ($row['aluno' . $aluno_numero . 'OP5status']) {
+                                                        echo 'checked';
+                                                    }
+                                                    echo ' /></td>';
+                                                    echo '<td><input type="radio" name="OP5p' . $aluno_numero . '" value="ausente" ';
+                                                    if ($row['aluno' . $aluno_numero . 'OP5status'] == false) {
+                                                        echo 'checked';
+                                                    }
+                                                    echo ' /></td>';
+                                                    echo '</tr>';
+                                                }
+                                            }
+                                            ?>                                            
                                         </tbody>
                                     </table>
                                 </div>
@@ -594,27 +597,27 @@ $row = mysqli_fetch_assoc($result);
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Allan</td>
-                                                <td>teste@teste.com</td>
-                                                <td><input type="radio" name="OP6#1" value="presente" /></td>
-                                                <td><input type="radio" name="OP6#1" value="ausente" /></td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Allan</td>
-                                                <td>teste@teste.com</td>
-                                                <td><input type="radio" name="OP6#2" value="presente" /></td>
-                                                <td><input type="radio" name="OP6#2" value="ausente" /></td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Allan</td>
-                                                <td>teste@teste.com</td>
-                                                <td><input type="radio" name="OP6#3" value="presente" /></td>
-                                                <td><input type="radio" name="OP6#3" value="ausente" /></td>
-                                            </tr>
+                                            <?php
+                                            for ($aluno_numero = 1; $aluno_numero <= 9; $aluno_numero++) {
+                                                if ($row['matricula' . $aluno_numero] != '') {
+                                                    echo '<tr>';
+                                                    echo '<td>1</td>';
+                                                    echo '<td>' . $row['nome' . $aluno_numero] . '</td>';
+                                                    echo '<td>' . $row['email' . $aluno_numero] . '</td>';
+                                                    echo '<td><input type="radio" name="OP6p' . $aluno_numero . '" value="presente" ';
+                                                    if ($row['aluno' . $aluno_numero . 'OP6status']) {
+                                                        echo 'checked';
+                                                    }
+                                                    echo ' /></td>';
+                                                    echo '<td><input type="radio" name="OP6p' . $aluno_numero . '" value="ausente" ';
+                                                    if ($row['aluno' . $aluno_numero . 'OP6status'] == false) {
+                                                        echo 'checked';
+                                                    }
+                                                    echo ' /></td>';
+                                                    echo '</tr>';
+                                                }
+                                            }
+                                            ?>                                            
                                         </tbody>
                                     </table>
                                 </div>
