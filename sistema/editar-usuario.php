@@ -2,6 +2,7 @@
     include 'cabecalho.php';
 ?>
 <?php
+$mensagem_da_acao='';
 if($_GET['nome']!=''){
     $servername = "localhost";
     $username = "gecti";
