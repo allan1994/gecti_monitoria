@@ -25,7 +25,7 @@ if ($_POST['acao'] == 'Salvar') {
                 if (mysqli_query($conn, $sql)) {
                     //echo "Record updated successfully";
                 } else {
-                    echo "Error updating record: " . mysqli_error($conn);
+                    echo "Error updating record 1: " . mysqli_error($conn);
                 }
             }
         }
@@ -41,7 +41,7 @@ if ($_POST['acao'] == 'Salvar') {
             if (mysqli_query($conn, $sql)) {
                 //echo "Record updated successfully";
             } else {
-                echo "Error updating record: " . mysqli_error($conn);
+                echo "Error updating record 2: " . mysqli_error($conn);
             }
         }
     }
@@ -56,7 +56,7 @@ if ($_POST['acao'] == 'Salvar') {
             if (mysqli_query($conn, $sql)) {
                 //echo "Record updated successfully";
             } else {
-                echo "Error updating record: " . mysqli_error($conn);
+                echo "Error updating record 3: " . mysqli_error($conn);
             }
         }
     }
@@ -71,7 +71,7 @@ if ($_POST['acao'] == 'Salvar') {
             if (mysqli_query($conn, $sql)) {
                 //echo "Record updated successfully";
             } else {
-                echo "Error updating record: " . mysqli_error($conn);
+                echo "Error updating record 4: " . mysqli_error($conn);
             }
         }
     }
@@ -86,7 +86,7 @@ if ($_POST['acao'] == 'Salvar') {
             if (mysqli_query($conn, $sql)) {
                 //echo "Record updated successfully";
             } else {
-                echo "Error updating record: " . mysqli_error($conn);
+                echo "Error updating record 5: " . mysqli_error($conn);
             }
         }
     }
@@ -101,22 +101,22 @@ if ($_POST['acao'] == 'Salvar') {
             if (mysqli_query($conn, $sql)) {
                 //echo "Record updated successfully";
             } else {
-                echo "Error updating record: " . mysqli_error($conn);
+                echo "Error updating record 7: " . mysqli_error($conn);
             }
         }
     }
     for ($OBS_numero = 1; $OBS_numero <= 6; $OBS_numero++) {
         if ($_POST['avaliacaoOP' . $OBS_numero . 'atendimentoOBS']) {
             $sql = "UPDATE grupos SET "
-                    . "avaliacaoOP" . $OBS_numero . "atendimentoOBS="
+                    . "avaliacaoOP" . $OBS_numero . "atendimentoOBS='"
                     . $_POST['avaliacaoOP' . $OBS_numero . 'atendimentoOBS']
-                    . " WHERE id="
+                    . "' WHERE id="
                     . $_REQUEST['idGrupo']
                     . "";
             if (mysqli_query($conn, $sql)) {
                 //echo "Record updated successfully";
             } else {
-                echo "Error updating record: " . mysqli_error($conn);
+                echo "Error updating record 8: " . mysqli_error($conn);
             }
         }
     }
@@ -133,11 +133,11 @@ if ($_POST['acao'] == 'Fechar') {
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
-    $sql = "UPDATE grupos SET status=Fechado WHERE id=".$_REQUEST['idGrupo'];
+    $sql = "UPDATE grupos SET status=Fechado WHERE id=" . $_REQUEST['idGrupo'];
     if (mysqli_query($conn, $sql)) {
         //echo "Record updated successfully";
     } else {
-        echo "Error updating record: " . mysqli_error($conn);
+        echo "Error updating record 9: " . mysqli_error($conn);
     }
     mysqli_close($conn);
 }
@@ -152,11 +152,11 @@ if ($_POST['acao'] == 'ReAbrir') {
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
-    $sql = "UPDATE grupos SET status=ReAbrir WHERE id=".$_REQUEST['idGrupo'];
+    $sql = "UPDATE grupos SET status=ReAbrir WHERE id=" . $_REQUEST['idGrupo'];
     if (mysqli_query($conn, $sql)) {
         //echo "Record updated successfully";
     } else {
-        echo "Error updating record: " . mysqli_error($conn);
+        echo "Error updating record 10: " . mysqli_error($conn);
     }
     mysqli_close($conn);
 }
@@ -170,7 +170,7 @@ $dbname = "gecti";
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
 if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+    die("Connection failed 11: " . mysqli_connect_error());
 }
 $sql = "SELECT * FROM grupos WHERE id=" . $_REQUEST['idGrupo'];
 $result = mysqli_query($conn, $sql);

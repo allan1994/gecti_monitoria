@@ -34,8 +34,8 @@ if ($_GET['nome'] != '') {
                 if (!$conn) {
                     die("Connection failed: " . mysqli_connect_error());
                 }
-                $sql = "INSERT INTO usuarios (nome, usuario, senha, tipo)
-                VALUES ('" . $_GET['nome'] . "', '" . $_GET['usuario'] . "', 'gecti123', '" . $_GET['tipo'] . "')";
+                $sql = "INSERT INTO usuarios (nome, usuario, senha, tipo, aba)
+                VALUES ('" . $_GET['nome'] . "', '" . $_GET['usuario'] . "', 'gecti123', '" . $_GET['tipo'] . "', 'true')";
                 if (mysqli_query($conn, $sql)) {
                     //echo "New record created successfully";
                     $mensagem_da_acao = 'Novo Usuário ' . $_GET['nome'] . ' criado';
