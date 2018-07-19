@@ -20,9 +20,9 @@ if ($_POST['acao'] == 'Salvar') {
         for ($aluno_numero = 1; $aluno_numero <= 9; $aluno_numero++) {
             if ($_POST['aluno' . $aluno_numero . 'OP1status']) {
                 $sql = "UPDATE grupos SET "
-                        . "aluno" . $aluno_numero . "OP" . $OPs_numero . "status="
+                        . "aluno" . $aluno_numero . "OP" . $OPs_numero . "status='"
                         . $_POST['aluno' . $aluno_numero . 'OP' . $OPs_numero . 'status']
-                        . " WHERE id="
+                        . "' WHERE id="
                         . $_REQUEST['idGrupo']
                         . "";
                 if (mysqli_query($conn, $sql)) {
@@ -223,12 +223,12 @@ $row = mysqli_fetch_assoc($result);
                                                     echo '<td>' . $row['nome' . $aluno_numero] . '</td>';
                                                     echo '<td>' . $row['email' . $aluno_numero] . '</td>';
                                                     echo '<td><input type="radio" name="aluno' . $aluno_numero . 'OP1status" value="true" ';
-                                                    if ($row['aluno' . $aluno_numero . 'OP1status']) {
+                                                    if ($row['aluno' . $aluno_numero . 'OP1status'] == 'true') {
                                                         echo 'checked';
                                                     }
                                                     echo ' /></td>';
                                                     echo '<td><input type="radio" name="aluno' . $aluno_numero . 'OP1status" value="false" ';
-                                                    if ($row['aluno' . $aluno_numero . 'OP1status'] == false) {
+                                                    if ($row['aluno' . $aluno_numero . 'OP1status'] == 'false') {
                                                         echo 'checked';
                                                     }
                                                     echo ' /></td>';
@@ -330,12 +330,12 @@ $row = mysqli_fetch_assoc($result);
                                                     echo '<td>' . $row['nome' . $aluno_numero] . '</td>';
                                                     echo '<td>' . $row['email' . $aluno_numero] . '</td>';
                                                     echo '<td><input type="radio" name="OP2p' . $aluno_numero . '" value="presente" ';
-                                                    if ($row['aluno' . $aluno_numero . 'OP2status']) {
+                                                    if ($row['aluno' . $aluno_numero . 'OP2status']  == 'true') {
                                                         echo 'checked';
                                                     }
                                                     echo ' /></td>';
                                                     echo '<td><input type="radio" name="OP2p' . $aluno_numero . '" value="ausente" ';
-                                                    if ($row['aluno' . $aluno_numero . 'OP2status'] == false) {
+                                                    if ($row['aluno' . $aluno_numero . 'OP2status'] == 'false') {
                                                         echo 'checked';
                                                     }
                                                     echo ' /></td>';
@@ -429,12 +429,12 @@ $row = mysqli_fetch_assoc($result);
                                                     echo '<td>' . $row['nome' . $aluno_numero] . '</td>';
                                                     echo '<td>' . $row['email' . $aluno_numero] . '</td>';
                                                     echo '<td><input type="radio" name="OP3p' . $aluno_numero . '" value="presente" ';
-                                                    if ($row['aluno' . $aluno_numero . 'OP3status']) {
+                                                    if ($row['aluno' . $aluno_numero . 'OP3status']  == 'true') {
                                                         echo 'checked';
                                                     }
                                                     echo ' /></td>';
                                                     echo '<td><input type="radio" name="OP3p' . $aluno_numero . '" value="ausente" ';
-                                                    if ($row['aluno' . $aluno_numero . 'OP3status'] == false) {
+                                                    if ($row['aluno' . $aluno_numero . 'OP3status'] == 'false') {
                                                         echo 'checked';
                                                     }
                                                     echo ' /></td>';
@@ -532,12 +532,12 @@ $row = mysqli_fetch_assoc($result);
                                                     echo '<td>' . $row['nome' . $aluno_numero] . '</td>';
                                                     echo '<td>' . $row['email' . $aluno_numero] . '</td>';
                                                     echo '<td><input type="radio" name="OP4p' . $aluno_numero . '" value="presente" ';
-                                                    if ($row['aluno' . $aluno_numero . 'OP4status']) {
+                                                    if ($row['aluno' . $aluno_numero . 'OP4status']  == 'true') {
                                                         echo 'checked';
                                                     }
                                                     echo ' /></td>';
                                                     echo '<td><input type="radio" name="OP4p' . $aluno_numero . '" value="ausente" ';
-                                                    if ($row['aluno' . $aluno_numero . 'OP4status'] == false) {
+                                                    if ($row['aluno' . $aluno_numero . 'OP4status'] == 'false') {
                                                         echo 'checked';
                                                     }
                                                     echo ' /></td>';
@@ -619,12 +619,12 @@ $row = mysqli_fetch_assoc($result);
                                                     echo '<td>' . $row['nome' . $aluno_numero] . '</td>';
                                                     echo '<td>' . $row['email' . $aluno_numero] . '</td>';
                                                     echo '<td><input type="radio" name="OP5p' . $aluno_numero . '" value="presente" ';
-                                                    if ($row['aluno' . $aluno_numero . 'OP5status']) {
+                                                    if ($row['aluno' . $aluno_numero . 'OP5status']  == 'true') {
                                                         echo 'checked';
                                                     }
                                                     echo ' /></td>';
                                                     echo '<td><input type="radio" name="OP5p' . $aluno_numero . '" value="ausente" ';
-                                                    if ($row['aluno' . $aluno_numero . 'OP5status'] == false) {
+                                                    if ($row['aluno' . $aluno_numero . 'OP5status'] == 'false') {
                                                         echo 'checked';
                                                     }
                                                     echo ' /></td>';
@@ -753,12 +753,12 @@ $row = mysqli_fetch_assoc($result);
                                                     echo '<td>' . $row['nome' . $aluno_numero] . '</td>';
                                                     echo '<td>' . $row['email' . $aluno_numero] . '</td>';
                                                     echo '<td><input type="radio" name="OP6p' . $aluno_numero . '" value="presente" ';
-                                                    if ($row['aluno' . $aluno_numero . 'OP6status']) {
+                                                    if ($row['aluno' . $aluno_numero . 'OP6status']  == 'true') {
                                                         echo 'checked';
                                                     }
                                                     echo ' /></td>';
                                                     echo '<td><input type="radio" name="OP6p' . $aluno_numero . '" value="ausente" ';
-                                                    if ($row['aluno' . $aluno_numero . 'OP6status'] == false) {
+                                                    if ($row['aluno' . $aluno_numero . 'OP6status'] == 'false') {
                                                         echo 'checked';
                                                     }
                                                     echo ' /></td>';
