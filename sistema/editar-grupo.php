@@ -32,6 +32,7 @@ $row = mysqli_fetch_assoc($result);
                 <li class=""><a href="#OP6" data-toggle="tab" aria-expanded="false">OP6</a></li>
             </ul>
             <form method="get" action="salvar-grupo.php">
+                <input name="idGrupo" value="<?php echo $_POST['idGrupo']; ?>" hidden="">
                 <div class="tab-content">
                     <div class="tab-pane active" id="OP1">
                         <div class="row">
@@ -583,6 +584,9 @@ $row = mysqli_fetch_assoc($result);
         </div>
     </div>
 </div>
+<?php
+mysqli_close($conn);
+?>
 <?php
 include 'rodape.php';
 ?>  
