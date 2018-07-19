@@ -32,16 +32,16 @@ if ($_SESSION['usuarioTipo'] == 'Professor') {
         while ($row = mysqli_fetch_assoc($result)) {
             if ($contador == 1) {
                 echo '<div class="market-updates">';
-            }            
+            }
             echo '<div class="col-md-4 market-update-gd">';
             echo '<div class="market-update-block clr-block-1">';
             echo '<div class="col-md-8 market-update-left">';
             echo '<h3>' . $row['codigo'] . '</h3>';
-            echo '<h4>'.$row['tipo'].'</h4>';
-            echo '<p>'.$row['objeto'].'</p>';
+            echo '<h4>' . $row['tipo'] . '</h4>';
+            echo '<p>' . $row['objeto'] . '</p>';
             echo '</div>';
             echo '<div class="col-md-4 market-update-right">';
-            echo '<a href="editar-grupo.php?idGrupo='.$row['id'].'"><i class="fa fa-file-text-o"></i></a>';
+            echo '<a href="editar-grupo.php?idGrupo=' . $row['id'] . '"><i class="fa fa-file-text-o"></i></a>';
             echo '</div>';
             echo '<div class="clearfix"> </div>';
             echo '</div>';
@@ -50,7 +50,7 @@ if ($_SESSION['usuarioTipo'] == 'Professor') {
                 echo '</div>';
                 echo '<br />';
             }
-            $contador++;            
+            $contador++;
         }
     } else {
         echo "0 results";
