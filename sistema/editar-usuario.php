@@ -67,6 +67,11 @@ if($_GET['usuario']!=''){
 }
 ?>
 <div class="inner-block">
+    <?php
+    if($mensagem_da_acao!=''){
+        echo '<h2>'.$mensagem_da_acao.'</h2>';
+    }
+    ?>
     <h3>Configurações</h3>
     <br />
     <form action="editar-usuario.php" method="get">
