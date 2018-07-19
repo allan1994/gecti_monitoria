@@ -17,7 +17,7 @@ if ($_GET['deletar'] != '') {
     $sql = "DELETE FROM usuarios WHERE id=" . $_POST['deletar'] . "";
     if (mysqli_query($conn, $sql)) {
         //echo "Record deleted successfully";
-        $mensagem_da_acao = 'Usuário de ID '. $_POST['deletar'] .' deletado com sucesso !!!';
+        $mensagem_da_acao = 'Usuário de ID ' . $_POST['deletar'] . ' deletado com sucesso !!!';
     } else {
         echo "Falha ao deletar <br>";
         echo "Error deleting record: " . mysqli_error($conn);
@@ -39,7 +39,7 @@ if ($_GET['senha'] != '') {
 
     if (mysqli_query($conn, $sql)) {
         //echo "Record updated successfully";
-        $mensagem_da_acao = 'Usuário de ID '. $_POST['senha'] .' atualizado com sucesso !!! Nova Senha: gecti123';
+        $mensagem_da_acao = 'Usuário de ID ' . $_POST['senha'] . ' atualizado com sucesso !!! Nova Senha: gecti123';
     } else {
         echo "Error updating record: " . mysqli_error($conn);
     }
@@ -85,7 +85,7 @@ $result = mysqli_query($conn, $sql);
                     </thead>
                     <tbody>
                         <?php
-                        $number_x=1;
+                        $number_x = 1;
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
                                 echo '<tr>';

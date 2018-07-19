@@ -3,7 +3,7 @@ include 'cabecalho.php';
 ?>
 <?php
 if ($_POST['acao'] == 'Componentes') {
-    header("Location: editar-componentes.php?idGrupo=".$_REQUEST['idGrupo']);
+    header("Location: editar-componentes.php?idGrupo=" . $_REQUEST['idGrupo']);
 }
 if ($_POST['acao'] == 'Salvar') {
     $servername = "localhost";

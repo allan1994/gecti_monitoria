@@ -60,7 +60,7 @@ if ($_GET['senha'] != '') {
 
     if (mysqli_query($conn, $sql)) {
         //echo "Record updated successfully";
-        $mensagem_da_acao = 'Usuário de ID '. $_POST['deletar'] .' atualizado com sucesso !!!';
+        $mensagem_da_acao = 'Usuário de ID ' . $_POST['deletar'] . ' atualizado com sucesso !!!';
     } else {
         echo "Error updating record: " . mysqli_error($conn);
     }
