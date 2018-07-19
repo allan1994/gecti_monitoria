@@ -39,7 +39,7 @@ if($_POST['senha']!=''){
 
     if (mysqli_query($conn, $sql)) {
         //echo "Record updated successfully";
-        $mensagem_da_acao='Usuário atualizado com sucesso !!! NOva Senha: gecti123';
+        $mensagem_da_acao='Usuário atualizado com sucesso !!! Nova Senha: gecti123';
     } else {
         echo "Error updating record: " . mysqli_error($conn);
     }
