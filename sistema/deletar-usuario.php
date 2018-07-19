@@ -2,8 +2,8 @@
 include 'cabecalho.php';
 ?>
 <?php
-$mensagem_da_acao='';
-if($_POST['deletar']!=''){
+$mensagem_da_acao = '';
+if ($_POST['deletar'] != '') {
     $servername = "localhost";
     $username = "gecti";
     $password = "g3cT1@(20)18";
@@ -14,17 +14,17 @@ if($_POST['deletar']!=''){
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
-    $sql = "DELETE FROM usuarios WHERE id=".$_POST['deletar']."";
+    $sql = "DELETE FROM usuarios WHERE id=" . $_POST['deletar'] . "";
     if (mysqli_query($conn, $sql)) {
         //echo "Record deleted successfully";
-        $mensagem_da_acao='Usuário deletado com sucesso !!!';
+        $mensagem_da_acao = 'Usuário deletado com sucesso !!!';
     } else {
         echo "Falha ao deletar <br>";
         echo "Error deleting record: " . mysqli_error($conn);
     }
     mysqli_close($conn);
 }
-if($_POST['senha']!=''){
+if ($_POST['senha'] != '') {
     $servername = "localhost";
     $username = "gecti";
     $password = "g3cT1@(20)18";
@@ -35,11 +35,11 @@ if($_POST['senha']!=''){
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
-    $sql = "UPDATE usuarios SET senha='gecti123' WHERE id=".$_POST['senha']."";
+    $sql = "UPDATE usuarios SET senha='gecti123' WHERE id=" . $_POST['senha'] . "";
 
     if (mysqli_query($conn, $sql)) {
         //echo "Record updated successfully";
-        $mensagem_da_acao='Usuário atualizado com sucesso !!! Nova Senha: gecti123';
+        $mensagem_da_acao = 'Usuário atualizado com sucesso !!! Nova Senha: gecti123';
     } else {
         echo "Error updating record: " . mysqli_error($conn);
     }
@@ -64,8 +64,8 @@ $result = mysqli_query($conn, $sql);
     <div class="col-md-12 chit-chat-layer1-left">
         <div class="work-progres">
             <?php
-            if($mensagem_da_acao!=''){
-                echo '<h2>'.$mensagem_da_acao.'</h2>';
+            if ($mensagem_da_acao != '') {
+                echo '<h2>' . $mensagem_da_acao . '</h2>';
             }
             ?>
             <div class="chit-chat-heading">
@@ -88,12 +88,12 @@ $result = mysqli_query($conn, $sql);
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
                                 echo '<tr>';
-                                    echo '<td>' . $row['nome'] . '</td>';
-                                    echo '<td>' . $row['usuario'] . '</td>';
-                                    echo '<td>' . $row['tipo'] . '</td>';
-                                    echo '<td> <a href="deletar-usuario.php?deletar=' . $row['id'] . '"><i class="fa fa-trash" aria-hidden="true"></i></a></td>';
-                                    echo '<td> <a href="deletar-usuario.php?senha=' . $row['id'] . '"><i class="fa fa-key" aria-hidden="true"></i></a></td>';
-                                echo '</tr>';                                    
+                                echo '<td>' . $row['nome'] . '</td>';
+                                echo '<td>' . $row['usuario'] . '</td>';
+                                echo '<td>' . $row['tipo'] . '</td>';
+                                echo '<td> <a href="deletar-usuario.php?deletar=' . $row['id'] . '"><i class="fa fa-trash" aria-hidden="true"></i></a></td>';
+                                echo '<td> <a href="deletar-usuario.php?senha=' . $row['id'] . '"><i class="fa fa-key" aria-hidden="true"></i></a></td>';
+                                echo '</tr>';
                             }
                         }
                         mysqli_close($conn);

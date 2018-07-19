@@ -1,5 +1,5 @@
 ﻿<?php
-    include 'cabecalho.php';
+include 'cabecalho.php';
 ?>
 <div class="inner-block">
     <!--market updates updates-->
@@ -90,6 +90,6 @@
         <div class="clearfix"> </div>
     </div>
     <br />
-<?php
+    <?php
     include 'rodape.php';
-?>
+    ?>

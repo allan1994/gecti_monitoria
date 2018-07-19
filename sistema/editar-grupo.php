@@ -1,5 +1,5 @@
 ﻿<?php
-    include 'cabecalho.php';
+include 'cabecalho.php';
 ?>
 <div class="inner-block">
     <h3>Grupo [código] </h3>
@@ -618,5 +618,5 @@
     </div>
 </div>
 <?php
-    include 'rodape.php';
+include 'rodape.php';
 ?>  

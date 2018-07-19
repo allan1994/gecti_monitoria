@@ -1,11 +1,11 @@
 ﻿<?php
-    include 'cabecalho.php';
+include 'cabecalho.php';
 ?>
 <?php
-$mensagem_da_acao='';
-if($_GET['nome']!=''){
-    if($_GET['usuario']!=''){
-        if($_GET['tipo']!=''){
+$mensagem_da_acao = '';
+if ($_GET['nome'] != '') {
+    if ($_GET['usuario'] != '') {
+        if ($_GET['tipo'] != '') {
             $servername = "localhost";
             $username = "gecti";
             $password = "g3cT1@(20)18";
@@ -17,11 +17,11 @@ if($_GET['nome']!=''){
                 die("Connection failed: " . mysqli_connect_error());
             }
             $sql = "INSERT INTO usuarios (nome, usuario, senha, tipo)
-            VALUES ('".$_GET['nome']."', '".$_GET['usuario']."', 'gecti123', '".$_GET['tipo']."')";
+            VALUES ('" . $_GET['nome'] . "', '" . $_GET['usuario'] . "', 'gecti123', '" . $_GET['tipo'] . "')";
 
             if (mysqli_query($conn, $sql)) {
                 //echo "New record created successfully";
-                $mensagem_da_acao='Novo Usuário '.$_GET['nome'].' criado';
+                $mensagem_da_acao = 'Novo Usuário ' . $_GET['nome'] . ' criado';
             } else {
                 echo "Error: " . $sql . "<br>" . mysqli_error($conn);
             }
@@ -33,8 +33,8 @@ if($_GET['nome']!=''){
 ?>
 <div class="inner-block">
     <?php
-    if($mensagem_da_acao!=''){
-        echo '<h2>'.$mensagem_da_acao.'</h2>';
+    if ($mensagem_da_acao != '') {
+        echo '<h2>' . $mensagem_da_acao . '</h2>';
     }
     ?>    
     <h3>Cadastro Novo Usuário</h3>
@@ -60,5 +60,5 @@ if($_GET['nome']!=''){
     </form>
 </div>
 <?php
-    include 'rodape.php';
+include 'rodape.php';
 ?> 

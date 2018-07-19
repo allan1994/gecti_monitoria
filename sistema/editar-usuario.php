@@ -1,9 +1,9 @@
 ﻿<?php
-    include 'cabecalho.php';
+include 'cabecalho.php';
 ?>
 <?php
-$mensagem_da_acao='';
-if($_GET['nome']!=''){
+$mensagem_da_acao = '';
+if ($_GET['nome'] != '') {
     $servername = "localhost";
     $username = "gecti";
     $password = "g3cT1@(20)18";
@@ -14,17 +14,17 @@ if($_GET['nome']!=''){
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
-    $sql = "UPDATE usuarios SET nome='".$_GET['nome']."' WHERE id=".$_SESSION['usuarioID']."";
+    $sql = "UPDATE usuarios SET nome='" . $_GET['nome'] . "' WHERE id=" . $_SESSION['usuarioID'] . "";
 
     if (mysqli_query($conn, $sql)) {
         //echo "Record updated successfully";
-        $mensagem_da_acao='Usuário atualizado com sucesso !!!';
+        $mensagem_da_acao = 'Usuário atualizado com sucesso !!!';
     } else {
         echo "Error updating record: " . mysqli_error($conn);
     }
     mysqli_close($conn);
 }
-if($_GET['usuario']!=''){
+if ($_GET['usuario'] != '') {
     $servername = "localhost";
     $username = "gecti";
     $password = "g3cT1@(20)18";
@@ -35,17 +35,17 @@ if($_GET['usuario']!=''){
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
-    $sql = "UPDATE usuarios SET usuario='".$_GET['usuario']."' WHERE id=".$_SESSION['usuarioID']."";
+    $sql = "UPDATE usuarios SET usuario='" . $_GET['usuario'] . "' WHERE id=" . $_SESSION['usuarioID'] . "";
 
     if (mysqli_query($conn, $sql)) {
         //echo "Record updated successfully";
-        $mensagem_da_acao='Usuário atualizado com sucesso !!!';
+        $mensagem_da_acao = 'Usuário atualizado com sucesso !!!';
     } else {
         echo "Error updating record: " . mysqli_error($conn);
     }
     mysqli_close($conn);
 }
-if($_GET['usuario']!=''){
+if ($_GET['usuario'] != '') {
     $servername = "localhost";
     $username = "gecti";
     $password = "g3cT1@(20)18";
@@ -56,11 +56,11 @@ if($_GET['usuario']!=''){
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
-    $sql = "UPDATE usuarios SET senha='".$_GET['senha']."' WHERE id=".$_SESSION['usuarioID']."";
+    $sql = "UPDATE usuarios SET senha='" . $_GET['senha'] . "' WHERE id=" . $_SESSION['usuarioID'] . "";
 
     if (mysqli_query($conn, $sql)) {
         //echo "Record updated successfully";
-        $mensagem_da_acao='Usuário atualizado com sucesso !!!';
+        $mensagem_da_acao = 'Usuário atualizado com sucesso !!!';
     } else {
         echo "Error updating record: " . mysqli_error($conn);
     }
@@ -69,8 +69,8 @@ if($_GET['usuario']!=''){
 ?>
 <div class="inner-block">
     <?php
-    if($mensagem_da_acao!=''){
-        echo '<h2>'.$mensagem_da_acao.'</h2>';
+    if ($mensagem_da_acao != '') {
+        echo '<h2>' . $mensagem_da_acao . '</h2>';
     }
     ?>
     <h3>Configurações</h3>
@@ -94,5 +94,5 @@ if($_GET['usuario']!=''){
     </form>
 </div>
 <?php
-    include 'rodape.php';
+include 'rodape.php';
 ?>
