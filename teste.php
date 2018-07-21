@@ -1,6 +1,6 @@
 <?php
-
-$servername = "gecti.ect.ufrn.br";
+/*
+$servername = "10.6.0.81";
 $username = "gecti";
 $password = "g3cT1@(20)18";
 $dbname = "gecti";
@@ -24,7 +24,7 @@ if (mysqli_query($conn, $sql)) {
 }
 mysqli_close($conn);
 
-$servername = "gecti.ect.ufrn.br";
+$servername = "10.6.0.81";
 $username = "gecti";
 $password = "g3cT1@(20)18";
 $dbname = "gecti";
@@ -156,12 +156,12 @@ $sql = "CREATE TABLE grupos ("
         . "avaliacaoOP5atendimento6 VARCHAR (60),"
         . "avaliacaoOP5atendimento7 VARCHAR (60),"
         . "avaliacaoOP5atendimento8 VARCHAR (60),"        
-        . "avaliacaoOP1atendiemntoOBS TXT (9999),"
-        . "avaliacaoOP2atendiemntoOBS TXT (9999),"
-        . "avaliacaoOP3atendiemntoOBS TXT (9999),"
-        . "avaliacaoOP4atendiemntoOBS TXT (9999),"
-        . "avaliacaoOP5atendiemntoOBS TXT (9999),"
-        . "avaliacaoOP6atendiemntoOBS TXT (9999),"
+        . "avaliacaoOP1atendiemntoOBS TEXT (9999),"
+        . "avaliacaoOP2atendiemntoOBS TEXT (9999),"
+        . "avaliacaoOP3atendiemntoOBS TEXT (9999),"
+        . "avaliacaoOP4atendiemntoOBS TEXT (9999),"
+        . "avaliacaoOP5atendiemntoOBS TEXT (9999),"
+        . "avaliacaoOP6atendiemntoOBS TEXT (9999),"
         . "PRIMARY KEY (id) )";
 if (mysqli_query($conn, $sql)) {
     echo "Record deleted successfully";
