@@ -19,7 +19,7 @@ $_SG['caseSensitive'] = true;     // Usar case-sensitive? Onde 'thiago' é difer
 $_SG['validaSempre'] = true;       // Deseja validar o usuário e a senha a cada carregamento de página?
 // Evita que, ao mudar os dados do usuário no banco de dado o mesmo contiue logado.
 $_SG['servidor'] = '10.6.0.81';    // Servidor MySQL
-$_SG['usuario'] = 'root';          // Usuário MySQL
+$_SG['usuario'] = 'gecti';          // Usuário MySQL
 $_SG['senha'] = 'g3cT1@(20)18';                // Senha MySQL
 $_SG['banco'] = 'gecti';            // Banco de dados MySQL
 $_SG['paginaLogin'] = 'login.php'; // Página de login
