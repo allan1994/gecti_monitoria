@@ -45,7 +45,10 @@ $result = mysqli_query($conn, $sql);
             $contador++;
         }
     } else {
-        echo "0 results";
+        echo ''
+        .'<div class="alert alert-info" role="alert">'
+        .'<strong>Atenção!</strong> Não há grupos Fechados.'
+        .'</div>';
     }
     mysqli_close($conn);
     ?>

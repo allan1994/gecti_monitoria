@@ -16,7 +16,7 @@
                     <span>Grupos</span>
                 </a>
                 <ul>
-                    <li><a href="index.php">Abertos</a></li>
+                    <li><a href="/sistema/">Abertos</a></li>
                     <?php
                     if ($_SESSION['usuarioTipo'] == "Aluno") {
                         echo '<li><a href="fechados.php">Fechados</a></li>';
@@ -28,9 +28,9 @@
             if ($_SESSION['usuarioTipo'] == "Aluno") {
                 echo
                 '<li>
-                    <a>
+                    <a href="novo-grupo.php">
                         <i class="fa fa-trello"></i>
-                        <a href="novo-grupo.php"><span>Novo Grupo</span></a>
+                        <span>Novo Grupo</span>
                     </a>
                 </li>';
             }

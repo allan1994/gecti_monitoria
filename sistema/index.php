@@ -55,7 +55,7 @@ if ($_SESSION['usuarioTipo'] == 'Professor') {
     } else {
         echo ''
         .'<div class="alert alert-info" role="alert">'
-        .'<strong>Atenção!</strong> Não há grupos abertos.'
+        .'<strong>Atenção!</strong> Não há grupos Abertos.'
         .'</div>';
     }
     mysqli_close($conn);
