@@ -4,7 +4,7 @@ include 'cabecalho.php';
 <?php
 $mensagem_da_acao = '';
 if ($_GET['deletar'] != '') {
-    $servername = "localhost";
+    $servername = "10.6.0.81";
     $username = "gecti";
     $password = "g3cT1@(20)18";
     $dbname = "gecti";
@@ -25,7 +25,7 @@ if ($_GET['deletar'] != '') {
     mysqli_close($conn);
 }
 if ($_GET['senha'] != '') {
-    $servername = "localhost";
+    $servername = "10.6.0.81";
     $username = "gecti";
     $password = "g3cT1@(20)18";
     $dbname = "gecti";
@@ -47,7 +47,7 @@ if ($_GET['senha'] != '') {
 }
 ?>
 <?php
-$servername = "localhost";
+$servername = "10.6.0.81";
 $username = "gecti";
 $password = "g3cT1@(20)18";
 $dbname = "gecti";

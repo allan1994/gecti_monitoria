@@ -6,7 +6,7 @@ if ($_POST['acao'] == 'Componentes') {
     header("Location: editar-componentes.php?idGrupo=" . $_REQUEST['idGrupo']);
 }
 if ($_POST['acao'] == 'Salvar') {
-    $servername = "localhost";
+    $servername = "10.6.0.81";
     $username = "gecti";
     $password = "g3cT1@(20)18";
     $dbname = "gecti";
@@ -126,7 +126,7 @@ if ($_POST['acao'] == 'Salvar') {
     mysqli_close($conn);
 }
 if ($_POST['acao'] == 'Fechar') {
-    $servername = "localhost";
+    $servername = "10.6.0.81";
     $username = "gecti";
     $password = "g3cT1@(20)18";
     $dbname = "gecti";
@@ -145,7 +145,7 @@ if ($_POST['acao'] == 'Fechar') {
     mysqli_close($conn);
 }
 if ($_POST['acao'] == 'ReAbrir') {
-    $servername = "localhost";
+    $servername = "10.6.0.81";
     $username = "gecti";
     $password = "g3cT1@(20)18";
     $dbname = "gecti";
@@ -165,7 +165,7 @@ if ($_POST['acao'] == 'ReAbrir') {
 }
 ?>
 <?php
-$servername = "localhost";
+$servername = "10.6.0.81";
 $username = "gecti";
 $password = "g3cT1@(20)18";
 $dbname = "gecti";

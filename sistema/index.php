@@ -2,7 +2,7 @@
 include 'cabecalho.php';
 ?>
 <?php
-$servername = "localhost";
+$servername = "10.6.0.81";
 $username = "gecti";
 $password = "g3cT1@(20)18";
 $dbname = "gecti";

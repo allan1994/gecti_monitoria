@@ -6,7 +6,7 @@ $mensagem_da_acao = '';
 if ($_GET['nome'] != '') {
     if ($_GET['usuario'] != '') {
         if ($_GET['tipo'] != '') {
-            $servername = "localhost";
+            $servername = "10.6.0.81";
             $username = "gecti";
             $password = "g3cT1@(20)18";
             $dbname = "gecti";
@@ -24,7 +24,7 @@ if ($_GET['nome'] != '') {
                 mysqli_close($conn);
             } else {
                 mysqli_close($conn);
-                $servername = "localhost";
+                $servername = "10.6.0.81";
                 $username = "gecti";
                 $password = "g3cT1@(20)18";
                 $dbname = "gecti";

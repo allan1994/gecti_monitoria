@@ -4,7 +4,7 @@ include 'cabecalho.php';
 <?php
 $mensagem_da_acao = '';
 if ($_GET['nome'] != '') {
-    $servername = "localhost";
+    $servername = "10.6.0.81";
     $username = "gecti";
     $password = "g3cT1@(20)18";
     $dbname = "gecti";
@@ -25,7 +25,7 @@ if ($_GET['nome'] != '') {
     mysqli_close($conn);
 }
 if ($_GET['usuario'] != '') {
-    $servername = "localhost";
+    $servername = "10.6.0.81";
     $username = "gecti";
     $password = "g3cT1@(20)18";
     $dbname = "gecti";
@@ -46,7 +46,7 @@ if ($_GET['usuario'] != '') {
     mysqli_close($conn);
 }
 if ($_GET['senha'] != '') {
-    $servername = "localhost";
+    $servername = "10.6.0.81";
     $username = "gecti";
     $password = "g3cT1@(20)18";
     $dbname = "gecti";

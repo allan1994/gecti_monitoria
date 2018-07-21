@@ -4,7 +4,7 @@ include 'cabecalho.php';
 <?php
 $mensagem_da_acao = '';
 if ($_POST['acao']) {
-    $servername = "localhost";
+    $servername = "10.6.0.81";
     $username = "gecti";
     $password = "g3cT1@(20)18";
     $dbname = "gecti";
@@ -26,7 +26,7 @@ if ($_POST['acao']) {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
     mysqli_close($conn);
-    $servername = "localhost";
+    $servername = "10.6.0.81";
     $username = "gecti";
     $password = "g3cT1@(20)18";
     $dbname = "gecti";
