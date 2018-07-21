@@ -2,6 +2,22 @@
 include("seguranca.php"); // Inclui o arquivo com o sistema de segurança
 protegePagina(); // Chama a função que protege a página
 ?>
+<?php
+$servername = "10.6.0.81";
+$username = "gecti";
+$password = "g3cT1@(20)18";
+$dbname = "gecti";
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed 11: " . mysqli_connect_error());
+}
+$sql = "SELECT nome FROM usuarios WHERE id=" . $_SESSION['usuarioID'];
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($result);
+mysqli_close($conn);
+?>
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -41,7 +57,7 @@ protegePagina(); // Chama a função que protege a página
                     <div class="header-main">
                         <div class="header-left">
                             <div class="logo-name">
-                                <a href="index.html">
+                                <a href="index.php">
                                     <h1>GECTI</h1>
                                     <!--<img id="logo" src="" alt="Logo"/>-->
                                 </a>
@@ -57,12 +73,12 @@ protegePagina(); // Chama a função que protege a página
                                                 <div class="user-name">
                                                     <p>
                                                         <?php
-                                                        echo $_SESSION['usuarioNome'];
+                                                        echo $row['nome'];
                                                         ?>
                                                     </p>
                                                     <span>
                                                         <?php
-                                                        echo $_SESSION['usuarioTipo'];
+                                                        echo $_SESSION['usuarioTipo']."(a)";
                                                         ?>
                                                     </span>
                                                 </div>

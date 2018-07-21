@@ -3,7 +3,7 @@ include 'cabecalho.php';
 ?>
 <?php
 $mensagem_da_acao = '';
-if ($_GET['deletar'] != '') {
+if ($_GET['deletar']) {
     $servername = "10.6.0.81";
     $username = "gecti";
     $password = "g3cT1@(20)18";
@@ -14,17 +14,20 @@ if ($_GET['deletar'] != '') {
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
-    $sql = "DELETE FROM usuarios WHERE id=" . $_POST['deletar'] . "";
+    $sql = "DELETE FROM usuarios WHERE id=" . $_GET['deletar'] . "";
     if (mysqli_query($conn, $sql)) {
         //echo "Record deleted successfully";
-        $mensagem_da_acao = 'Usuário de ID ' . $_POST['deletar'] . ' deletado com sucesso !!!';
+        $mensagem_da_acao = ''
+                . '<div class="alert alert-success" role="alert">'
+                . '<strong>Deletado!</strong> Usuário ID '.$_GET['deletar'].' deletado com sucesso.'
+                . '</div>';
     } else {
         echo "Falha ao deletar <br>";
         echo "Error deleting record: " . mysqli_error($conn);
     }
     mysqli_close($conn);
 }
-if ($_GET['senha'] != '') {
+if ($_GET['senha']) {
     $servername = "10.6.0.81";
     $username = "gecti";
     $password = "g3cT1@(20)18";
@@ -35,11 +38,14 @@ if ($_GET['senha'] != '') {
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
-    $sql = "UPDATE usuarios SET senha='gecti123' WHERE id=" . $_POST['senha'] . "";
+    $sql = "UPDATE usuarios SET senha='gecti123' WHERE id=" . $_GET['senha'] . "";
 
     if (mysqli_query($conn, $sql)) {
         //echo "Record updated successfully";
-        $mensagem_da_acao = 'Usuário de ID ' . $_POST['senha'] . ' atualizado com sucesso !!! Nova Senha: gecti123';
+        $mensagem_da_acao = ''
+                . '<div class="alert alert-success" role="alert">'
+                . '<strong>Atualizado!</strong> Senha do Usuário ID '.$_GET['senha'].' atualizado com sucesso para "gecti123".'
+                . '</div>';
     } else {
         echo "Error updating record: " . mysqli_error($conn);
     }
@@ -65,7 +71,7 @@ $result = mysqli_query($conn, $sql);
         <div class="work-progres">
             <?php
             if ($mensagem_da_acao != '') {
-                echo '<h2>' . $mensagem_da_acao . '</h2>';
+                echo $mensagem_da_acao;
             }
             ?>
             <div class="chit-chat-heading">

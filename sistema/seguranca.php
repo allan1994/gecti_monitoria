@@ -52,7 +52,7 @@ function validaUsuario($usuario, $senha) {
     $nusuario = addslashes($usuario);
     $nsenha = addslashes($senha);
     // Monta uma consulta SQL (query) para procurar um usuário
-    $sql = "SELECT `id`, `nome` FROM `" . $_SG['tabela'] . "` WHERE " . $cS . " `usuario` = '" . $nusuario . "' AND " . $cS . " `senha` = '" . $nsenha . "' LIMIT 1";
+    $sql = "SELECT * FROM `" . $_SG['tabela'] . "` WHERE " . $cS . " `usuario` = '" . $nusuario . "' AND " . $cS . " `senha` = '" . $nsenha . "' LIMIT 1";
     $query = mysql_query($sql);
     $resultado = mysql_fetch_assoc($query);
     // Verifica se encontrou algum registro

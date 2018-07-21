@@ -53,7 +53,10 @@ if ($_SESSION['usuarioTipo'] == 'Professor') {
             $contador++;
         }
     } else {
-        echo "0 results";
+        echo ''
+        .'<div class="alert alert-info" role="alert">'
+        .'<strong>Atenção!</strong> Não há grupos abertos.'
+        .'</div>';
     }
     mysqli_close($conn);
     ?>
