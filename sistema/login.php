@@ -36,7 +36,7 @@ session_destroy();
             <div class="sub-main-w3">
                 <div class="header-w3l">
                     <h1>
-                        <span>L</span>OGIN
+                        <span>L</span>OGIN <version style="font-size: 50%; color: #fff;">v1.0 (beta)</version>
                     </h1>
                     <br />
                 </div>

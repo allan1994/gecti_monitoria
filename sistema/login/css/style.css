@@ -44,17 +44,18 @@ body {
     padding-top: 16px;
 }
 .header-w3l h1 {
-    font-size: 4.5em;
+    font-size: 2.5em;
     color: #fff;
     letter-spacing: 4px;
     text-align: center;
     font-weight: 600;
     text-shadow: 4px 5px 8px #101010;
-    font-family: 'Tangerine', cursive;
+    /*font-family: 'Tangerine', cursive;*/
 }
     .header-w3l h1 span {
         color: #68ae00;
-    }
+    }   
+
 /*--//header--*/
 /*--main--*/
 .sub-main-w3 {
