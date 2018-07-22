@@ -91,7 +91,7 @@ if ($_POST['acao']) {
 <div class="inner-block">
     <?php
     if ($mensagem_da_acao != '') {
-        echo '<h2>' . $mensagem_da_acao . '</h2>';
+        echo $mensagem_da_acao;
     }
     ?>
     <h3>Cadastro Novo Grupo </h3>

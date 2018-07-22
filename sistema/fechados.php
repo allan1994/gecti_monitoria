@@ -37,11 +37,7 @@ $result = mysqli_query($conn, $sql);
             echo '</div>';
             echo '<div class="clearfix"> </div>';
             echo '</div>';
-            echo '</div>';
-            if (($contador % 3) == 0) {
-                echo '</div>';
-                echo '<br />';
-            }
+            echo '</div>';            
             $contador++;
         }
     } else {
