@@ -20,7 +20,10 @@ if ($_POST['acao']) {
     $last_id;
     if (mysqli_query($conn, $sql)) {
         //echo "New record created successfully";
-        $mensagem_da_acao = 'Novo Grupo ' . $_POST['codigo'] . ' criado com sucesso !!!';
+        $mensagem_da_acao = ''
+                            . '<div class="alert alert-success" role="alert">'
+                            . '<strong>Novo!</strong> Grupo ' . $_POST['codigo'] . ' criado com sucesso.'
+                            . '</div>';
         $last_id = mysqli_insert_id($conn);
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
@@ -41,7 +44,7 @@ if ($_POST['acao']) {
                 }
                 $sql = "UPDATE grupos SET matricula" . $matricula_numero . "='" . $_POST['matricula' . $matricula_numero] . "' WHERE id=" . $last_id;
                 if (mysqli_query($conn, $sql)) {
-                    echo "Record updated successfully";
+                    //echo "Record updated successfully";
                 } else {
                     echo "Error updating record: " . mysqli_error($conn);
                 }
@@ -58,7 +61,7 @@ if ($_POST['acao']) {
                 }
                 $sql = "UPDATE grupos SET nome" . $matricula_numero . "='" . $_POST['nome' . $matricula_numero] . "' WHERE id=" . $last_id;
                 if (mysqli_query($conn, $sql)) {
-                    echo "Record updated successfully";
+                    //echo "Record updated successfully";
                 } else {
                     echo "Error updating record: " . mysqli_error($conn);
                 }
@@ -75,7 +78,7 @@ if ($_POST['acao']) {
                 }
                 $sql = "UPDATE grupos SET email" . $matricula_numero . "='" . $_POST['email' . $matricula_numero] . "' WHERE id=" . $last_id;
                 if (mysqli_query($conn, $sql)) {
-                    echo "Record updated successfully";
+                    //echo "Record updated successfully";
                 } else {
                     echo "Error updating record: " . mysqli_error($conn);
                 }
