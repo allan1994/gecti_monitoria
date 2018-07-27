@@ -24,7 +24,7 @@ if ($_SESSION['usuarioTipo'] == 'Professor') {
 }
 ?>
 <div class="inner-block">
-    <!--market updates updates-->
+    <!--market updates updates--> 
     <?php
     $contador = 1;
     if (mysqli_num_rows($result) > 0) {
@@ -45,14 +45,14 @@ if ($_SESSION['usuarioTipo'] == 'Professor') {
             echo '</div>';
             echo '<div class="clearfix"> </div>';
             echo '</div>';
-            echo '</div>';            
+            echo '</div>';
             $contador++;
         }
     } else {
         echo ''
-        .'<div class="alert alert-info" role="alert">'
-        .'<strong>Atenção!</strong> Não há grupos Abertos.'
-        .'</div>';
+        . '<div class="alert alert-info" role="alert">'
+        . '<strong>Atenção!</strong> Não há grupos Abertos.'
+        . '</div>';
     }
     mysqli_close($conn);
     ?>
